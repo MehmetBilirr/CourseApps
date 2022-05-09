@@ -17,42 +17,60 @@ class QuizVC: UIViewController {
     @IBOutlet weak var buttonB: UIButton!
     @IBOutlet weak var buttonC: UIButton!
     @IBOutlet weak var buttonD: UIButton!
+    var questions = [Flags]()
+    var falseChoice = [Flags]()
+    
+    var trueQuestion = Flags()
+    var numOfQuestion = 0
+    var numOfCorrect = 0
+    var numOfIncorrect = 0
+    var choices = [Flags]()
+    var choicesMixArray = Set <Flags>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        questions = FlagsAdmin().getRandomFlags()
+        
+        
+        getQuestion()
+        
+        
+        
         
         
         
     }
     
-    func getData(){
+    func getQuestion(){
+        statuLabel.text = "\(numOfQuestion+1). Question"
+        correctLabel.text = "Correct: \(numOfCorrect)"
+        incorrectLabel.text = "Incorrect \(numOfIncorrect)"
         
+        trueQuestion = questions[numOfQuestion]
+        imageViewFlag.image = UIImage(named: trueQuestion.flag_image!)
+        falseChoice = FlagsAdmin().getRandom3False(bayrak_id: trueQuestion.flag_id!)
         
-        let bundle = Bundle.main.path(forResource: "flags", ofType: ".sqlite")!
+        choicesMixArray.removeAll()
+        choicesMixArray.insert(trueQuestion)
+        choicesMixArray.insert(falseChoice[0])
+        choicesMixArray.insert(falseChoice[1])
+        choicesMixArray.insert(falseChoice[2])
         
-        let target = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        choices.removeAll()
         
-        let fileManager = FileManager.default
-        
-        let file = URL(fileURLWithPath: target).appendingPathComponent("flags.sqlite")
-        
-        if fileManager.fileExists(atPath: file.path) {
-            
-            print("Veritabanı zaten var. Kopyalamaya gerek yok.")
-        }else {
-            
-            do {
-                
-                try fileManager.copyItem(atPath: bundle, toPath: file.path)
-                
-            }catch{
-                print(error)
-            }
-            
-            
+        for b in choicesMixArray {
+            choices.append(b)
         }
         
-        }
+        buttonA.setTitle(choices[0].flag_name, for: .normal)
+        buttonB.setTitle(choices[1].flag_name, for: .normal)
+        buttonC.setTitle(choices[2].flag_name, for: .normal)
+        buttonD.setTitle(choices[3].flag_name, for: .normal)
+        
+    }
+    
+    
 
     
     @IBAction func buttonAClicked(_ sender: Any) {

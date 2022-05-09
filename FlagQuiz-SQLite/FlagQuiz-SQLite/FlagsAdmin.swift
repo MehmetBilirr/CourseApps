@@ -16,7 +16,7 @@ class FlagsAdmin{
         
         let target = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         
-        let file = URL(fileURLWithPath: target).appendingPathComponent("flags.sqlite")
+        let file = URL(fileURLWithPath: target).appendingPathComponent("FlagQuiz.sqlite")
         
         db = FMDatabase(path: file.path)
 }
@@ -32,7 +32,7 @@ class FlagsAdmin{
             
             let rs = try db!.executeQuery("SELECT * FROM flags ORDER BY RANDOM() LIMIT 5 ", values: nil)
             while (rs.next()) {
-                let flag = Flags(flag_id: Int(rs.string(forColumn: "flag_id"))!, flag_name: (rs.string(forColumn: "flag_ad"))!, flag_image: (rs.string(forColumn: "flag_image"))!)
+                let flag = Flags(flag_id: Int(rs.string(forColumn: "flag_id"))!, flag_name: (rs.string(forColumn: "flag_name"))!, flag_image: (rs.string(forColumn: "flag_image"))!)
                 flagArray.append(flag)
             }
             
@@ -56,9 +56,9 @@ class FlagsAdmin{
         
         do {
             
-            let rs = try db!.executeQuery("SELECT * FROM flags WHERE bayrak_id != ? ORDER BY RANDOM() LIMIT 3 ", values: [bayrak_id])
+            let rs = try db!.executeQuery("SELECT * FROM flags WHERE flag_id != ? ORDER BY RANDOM() LIMIT 3 ", values: [bayrak_id])
             while (rs.next()) {
-                let flag = Flags(flag_id: Int(rs.string(forColumn: "flag_id"))!, flag_name: (rs.string(forColumn: "flag_ad"))!, flag_image: (rs.string(forColumn: "flag_image"))!)
+                let flag = Flags(flag_id: Int(rs.string(forColumn: "flag_id"))!, flag_name: (rs.string(forColumn: "flag_name"))!, flag_image: (rs.string(forColumn: "flag_image"))!)
                 flagArray.append(flag)
             }
             
