@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F071982F282937010030F6B3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F071982E282937010030F6B3 /* Flags.swift */; };
+		F0719831282939D10030F6B3 /* FlagsAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0719830282939D10030F6B3 /* FlagsAdmin.swift */; };
 		F0E09B232829283000145396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B222829283000145396 /* AppDelegate.swift */; };
 		F0E09B252829283000145396 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B242829283000145396 /* SceneDelegate.swift */; };
 		F0E09B272829283000145396 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B262829283000145396 /* ViewController.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F071982E282937010030F6B3 /* Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
+		F0719830282939D10030F6B3 /* FlagsAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsAdmin.swift; sourceTree = "<group>"; };
 		F0E09B1F2829283000145396 /* FlagQuiz-SQLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlagQuiz-SQLite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E09B222829283000145396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E09B242829283000145396 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				F0E09B262829283000145396 /* ViewController.swift */,
 				F0E09B522829298700145396 /* QuizVC.swift */,
 				F0E09B542829299700145396 /* ResultVC.swift */,
+				F0719830282939D10030F6B3 /* FlagsAdmin.swift */,
+				F071982E282937010030F6B3 /* Flags.swift */,
 				F0E09B282829283000145396 /* Main.storyboard */,
 				F0E09B2B2829283200145396 /* Assets.xcassets */,
 				F0E09B2D2829283200145396 /* LaunchScreen.storyboard */,
@@ -309,9 +315,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E09B552829299700145396 /* ResultVC.swift in Sources */,
+				F0719831282939D10030F6B3 /* FlagsAdmin.swift in Sources */,
 				F0E09B662829345300145396 /* FMDatabaseQueue.m in Sources */,
 				F0E09B272829283000145396 /* ViewController.swift in Sources */,
 				F0E09B532829298700145396 /* QuizVC.swift in Sources */,
+				F071982F282937010030F6B3 /* Flags.swift in Sources */,
 				F0E09B642829345300145396 /* FMDatabase.m in Sources */,
 				F0E09B652829345300145396 /* FMDatabasePool.m in Sources */,
 				F0E09B672829345300145396 /* FMResultSet.m in Sources */,
