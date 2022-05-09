@@ -1,0 +1,669 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0E09B232829283000145396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B222829283000145396 /* AppDelegate.swift */; };
+		F0E09B252829283000145396 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B242829283000145396 /* SceneDelegate.swift */; };
+		F0E09B272829283000145396 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B262829283000145396 /* ViewController.swift */; };
+		F0E09B2A2829283000145396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E09B282829283000145396 /* Main.storyboard */; };
+		F0E09B2C2829283200145396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E09B2B2829283200145396 /* Assets.xcassets */; };
+		F0E09B2F2829283200145396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E09B2D2829283200145396 /* LaunchScreen.storyboard */; };
+		F0E09B3A2829283200145396 /* FlagQuiz_SQLiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B392829283200145396 /* FlagQuiz_SQLiteTests.swift */; };
+		F0E09B442829283200145396 /* FlagQuiz_SQLiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B432829283200145396 /* FlagQuiz_SQLiteUITests.swift */; };
+		F0E09B462829283200145396 /* FlagQuiz_SQLiteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B452829283200145396 /* FlagQuiz_SQLiteUITestsLaunchTests.swift */; };
+		F0E09B532829298700145396 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B522829298700145396 /* QuizVC.swift */; };
+		F0E09B552829299700145396 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B542829299700145396 /* ResultVC.swift */; };
+		F0E09B642829345300145396 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B592829345300145396 /* FMDatabase.m */; };
+		F0E09B652829345300145396 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B5B2829345300145396 /* FMDatabasePool.m */; };
+		F0E09B662829345300145396 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B5C2829345300145396 /* FMDatabaseQueue.m */; };
+		F0E09B672829345300145396 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B5F2829345300145396 /* FMResultSet.m */; };
+		F0E09B682829345300145396 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E09B602829345300145396 /* FMDatabaseAdditions.m */; };
+		F0E09B6A2829349600145396 /* FlagQuiz.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F0E09B692829349600145396 /* FlagQuiz.sqlite */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0E09B362829283200145396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0E09B172829282F00145396 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0E09B1E2829282F00145396;
+			remoteInfo = "FlagQuiz-SQLite";
+		};
+		F0E09B402829283200145396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0E09B172829282F00145396 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0E09B1E2829282F00145396;
+			remoteInfo = "FlagQuiz-SQLite";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F0E09B1F2829283000145396 /* FlagQuiz-SQLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlagQuiz-SQLite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0E09B222829283000145396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0E09B242829283000145396 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F0E09B262829283000145396 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0E09B292829283000145396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0E09B2B2829283200145396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0E09B2E2829283200145396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0E09B302829283200145396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0E09B352829283200145396 /* FlagQuiz-SQLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlagQuiz-SQLiteTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0E09B392829283200145396 /* FlagQuiz_SQLiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagQuiz_SQLiteTests.swift; sourceTree = "<group>"; };
+		F0E09B3F2829283200145396 /* FlagQuiz-SQLiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlagQuiz-SQLiteUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0E09B432829283200145396 /* FlagQuiz_SQLiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagQuiz_SQLiteUITests.swift; sourceTree = "<group>"; };
+		F0E09B452829283200145396 /* FlagQuiz_SQLiteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagQuiz_SQLiteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F0E09B522829298700145396 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		F0E09B542829299700145396 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		F0E09B57282933CC00145396 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F0E09B582829345300145396 /* FlagQuiz-SQLite-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlagQuiz-SQLite-Bridging-Header.h"; sourceTree = "<group>"; };
+		F0E09B592829345300145396 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		F0E09B5A2829345300145396 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F0E09B5B2829345300145396 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		F0E09B5C2829345300145396 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F0E09B5D2829345300145396 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		F0E09B5E2829345300145396 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F0E09B5F2829345300145396 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		F0E09B602829345300145396 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F0E09B612829345300145396 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		F0E09B622829345300145396 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F0E09B632829345300145396 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		F0E09B692829349600145396 /* FlagQuiz.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlagQuiz.sqlite; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0E09B1C2829282F00145396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0E09B322829283200145396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0E09B3C2829283200145396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0E09B162829282F00145396 = {
+			isa = PBXGroup;
+			children = (
+				F0E09B212829283000145396 /* FlagQuiz-SQLite */,
+				F0E09B382829283200145396 /* FlagQuiz-SQLiteTests */,
+				F0E09B422829283200145396 /* FlagQuiz-SQLiteUITests */,
+				F0E09B202829283000145396 /* Products */,
+				F0E09B56282933CC00145396 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F0E09B202829283000145396 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0E09B1F2829283000145396 /* FlagQuiz-SQLite.app */,
+				F0E09B352829283200145396 /* FlagQuiz-SQLiteTests.xctest */,
+				F0E09B3F2829283200145396 /* FlagQuiz-SQLiteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0E09B212829283000145396 /* FlagQuiz-SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				F0E09B222829283000145396 /* AppDelegate.swift */,
+				F0E09B242829283000145396 /* SceneDelegate.swift */,
+				F0E09B262829283000145396 /* ViewController.swift */,
+				F0E09B522829298700145396 /* QuizVC.swift */,
+				F0E09B542829299700145396 /* ResultVC.swift */,
+				F0E09B282829283000145396 /* Main.storyboard */,
+				F0E09B2B2829283200145396 /* Assets.xcassets */,
+				F0E09B2D2829283200145396 /* LaunchScreen.storyboard */,
+				F0E09B692829349600145396 /* FlagQuiz.sqlite */,
+				F0E09B632829345300145396 /* FMDatabase.h */,
+				F0E09B592829345300145396 /* FMDatabase.m */,
+				F0E09B622829345300145396 /* FMDatabaseAdditions.h */,
+				F0E09B602829345300145396 /* FMDatabaseAdditions.m */,
+				F0E09B612829345300145396 /* FMDatabasePool.h */,
+				F0E09B5B2829345300145396 /* FMDatabasePool.m */,
+				F0E09B5A2829345300145396 /* FMDatabaseQueue.h */,
+				F0E09B5C2829345300145396 /* FMDatabaseQueue.m */,
+				F0E09B5D2829345300145396 /* FMDB.h */,
+				F0E09B5E2829345300145396 /* FMResultSet.h */,
+				F0E09B5F2829345300145396 /* FMResultSet.m */,
+				F0E09B302829283200145396 /* Info.plist */,
+				F0E09B582829345300145396 /* FlagQuiz-SQLite-Bridging-Header.h */,
+			);
+			path = "FlagQuiz-SQLite";
+			sourceTree = "<group>";
+		};
+		F0E09B382829283200145396 /* FlagQuiz-SQLiteTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0E09B392829283200145396 /* FlagQuiz_SQLiteTests.swift */,
+			);
+			path = "FlagQuiz-SQLiteTests";
+			sourceTree = "<group>";
+		};
+		F0E09B422829283200145396 /* FlagQuiz-SQLiteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F0E09B432829283200145396 /* FlagQuiz_SQLiteUITests.swift */,
+				F0E09B452829283200145396 /* FlagQuiz_SQLiteUITestsLaunchTests.swift */,
+			);
+			path = "FlagQuiz-SQLiteUITests";
+			sourceTree = "<group>";
+		};
+		F0E09B56282933CC00145396 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0E09B57282933CC00145396 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0E09B1E2829282F00145396 /* FlagQuiz-SQLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0E09B492829283200145396 /* Build configuration list for PBXNativeTarget "FlagQuiz-SQLite" */;
+			buildPhases = (
+				F0E09B1B2829282F00145396 /* Sources */,
+				F0E09B1C2829282F00145396 /* Frameworks */,
+				F0E09B1D2829282F00145396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlagQuiz-SQLite";
+			productName = "FlagQuiz-SQLite";
+			productReference = F0E09B1F2829283000145396 /* FlagQuiz-SQLite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0E09B342829283200145396 /* FlagQuiz-SQLiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0E09B4C2829283200145396 /* Build configuration list for PBXNativeTarget "FlagQuiz-SQLiteTests" */;
+			buildPhases = (
+				F0E09B312829283200145396 /* Sources */,
+				F0E09B322829283200145396 /* Frameworks */,
+				F0E09B332829283200145396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0E09B372829283200145396 /* PBXTargetDependency */,
+			);
+			name = "FlagQuiz-SQLiteTests";
+			productName = "FlagQuiz-SQLiteTests";
+			productReference = F0E09B352829283200145396 /* FlagQuiz-SQLiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F0E09B3E2829283200145396 /* FlagQuiz-SQLiteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0E09B4F2829283200145396 /* Build configuration list for PBXNativeTarget "FlagQuiz-SQLiteUITests" */;
+			buildPhases = (
+				F0E09B3B2829283200145396 /* Sources */,
+				F0E09B3C2829283200145396 /* Frameworks */,
+				F0E09B3D2829283200145396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0E09B412829283200145396 /* PBXTargetDependency */,
+			);
+			name = "FlagQuiz-SQLiteUITests";
+			productName = "FlagQuiz-SQLiteUITests";
+			productReference = F0E09B3F2829283200145396 /* FlagQuiz-SQLiteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0E09B172829282F00145396 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					F0E09B1E2829282F00145396 = {
+						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
+					};
+					F0E09B342829283200145396 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = F0E09B1E2829282F00145396;
+					};
+					F0E09B3E2829283200145396 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = F0E09B1E2829282F00145396;
+					};
+				};
+			};
+			buildConfigurationList = F0E09B1A2829282F00145396 /* Build configuration list for PBXProject "FlagQuiz-SQLite" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0E09B162829282F00145396;
+			productRefGroup = F0E09B202829283000145396 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0E09B1E2829282F00145396 /* FlagQuiz-SQLite */,
+				F0E09B342829283200145396 /* FlagQuiz-SQLiteTests */,
+				F0E09B3E2829283200145396 /* FlagQuiz-SQLiteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0E09B1D2829282F00145396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E09B2F2829283200145396 /* LaunchScreen.storyboard in Resources */,
+				F0E09B2C2829283200145396 /* Assets.xcassets in Resources */,
+				F0E09B6A2829349600145396 /* FlagQuiz.sqlite in Resources */,
+				F0E09B2A2829283000145396 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0E09B332829283200145396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0E09B3D2829283200145396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0E09B1B2829282F00145396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E09B552829299700145396 /* ResultVC.swift in Sources */,
+				F0E09B662829345300145396 /* FMDatabaseQueue.m in Sources */,
+				F0E09B272829283000145396 /* ViewController.swift in Sources */,
+				F0E09B532829298700145396 /* QuizVC.swift in Sources */,
+				F0E09B642829345300145396 /* FMDatabase.m in Sources */,
+				F0E09B652829345300145396 /* FMDatabasePool.m in Sources */,
+				F0E09B672829345300145396 /* FMResultSet.m in Sources */,
+				F0E09B232829283000145396 /* AppDelegate.swift in Sources */,
+				F0E09B252829283000145396 /* SceneDelegate.swift in Sources */,
+				F0E09B682829345300145396 /* FMDatabaseAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0E09B312829283200145396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E09B3A2829283200145396 /* FlagQuiz_SQLiteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0E09B3B2829283200145396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E09B442829283200145396 /* FlagQuiz_SQLiteUITests.swift in Sources */,
+				F0E09B462829283200145396 /* FlagQuiz_SQLiteUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0E09B372829283200145396 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0E09B1E2829282F00145396 /* FlagQuiz-SQLite */;
+			targetProxy = F0E09B362829283200145396 /* PBXContainerItemProxy */;
+		};
+		F0E09B412829283200145396 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0E09B1E2829282F00145396 /* FlagQuiz-SQLite */;
+			targetProxy = F0E09B402829283200145396 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0E09B282829283000145396 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0E09B292829283000145396 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0E09B2D2829283200145396 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0E09B2E2829283200145396 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0E09B472829283200145396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F0E09B482829283200145396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0E09B4A2829283200145396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FLPT7M2FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FlagQuiz-SQLite/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mehmetbilir.FlagQuiz-SQLite";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlagQuiz-SQLite/FlagQuiz-SQLite-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0E09B4B2829283200145396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FLPT7M2FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FlagQuiz-SQLite/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mehmetbilir.FlagQuiz-SQLite";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlagQuiz-SQLite/FlagQuiz-SQLite-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F0E09B4D2829283200145396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FLPT7M2FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mehmetbilir.FlagQuiz-SQLiteTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlagQuiz-SQLite.app/FlagQuiz-SQLite";
+			};
+			name = Debug;
+		};
+		F0E09B4E2829283200145396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FLPT7M2FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mehmetbilir.FlagQuiz-SQLiteTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlagQuiz-SQLite.app/FlagQuiz-SQLite";
+			};
+			name = Release;
+		};
+		F0E09B502829283200145396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FLPT7M2FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mehmetbilir.FlagQuiz-SQLiteUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "FlagQuiz-SQLite";
+			};
+			name = Debug;
+		};
+		F0E09B512829283200145396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FLPT7M2FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mehmetbilir.FlagQuiz-SQLiteUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "FlagQuiz-SQLite";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0E09B1A2829282F00145396 /* Build configuration list for PBXProject "FlagQuiz-SQLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0E09B472829283200145396 /* Debug */,
+				F0E09B482829283200145396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0E09B492829283200145396 /* Build configuration list for PBXNativeTarget "FlagQuiz-SQLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0E09B4A2829283200145396 /* Debug */,
+				F0E09B4B2829283200145396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0E09B4C2829283200145396 /* Build configuration list for PBXNativeTarget "FlagQuiz-SQLiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0E09B4D2829283200145396 /* Debug */,
+				F0E09B4E2829283200145396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0E09B4F2829283200145396 /* Build configuration list for PBXNativeTarget "FlagQuiz-SQLiteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0E09B502829283200145396 /* Debug */,
+				F0E09B512829283200145396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0E09B172829282F00145396 /* Project object */;
+}
