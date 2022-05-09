@@ -42,6 +42,14 @@ class QuizVC: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResultVC" {
+            let destinationVC = segue.destination as! ResultVC
+            destinationVC.numOfCorrect = numOfCorrect
+            
+        }
+    }
+    
     func getQuestion(){
         statuLabel.text = "\(numOfQuestion+1). Question"
         correctLabel.text = "Correct: \(numOfCorrect)"
@@ -70,18 +78,51 @@ class QuizVC: UIViewController {
         
     }
     
+    func control(button:UIButton){
+        let buttonText = button.titleLabel?.text
+        let correctAnswer = trueQuestion.flag_name
+        
+        if buttonText == correctAnswer {
+            numOfCorrect += 1
+        }else {
+            numOfIncorrect += 1
+        }
+        
+        correctLabel.text = "Correct: \(numOfCorrect)"
+        incorrectLabel.text = "Incorrect \(numOfIncorrect)"
+        
+    }
+    
+    func controlQuestion(){
+        numOfQuestion += 1
+        
+        if numOfQuestion != 5 {
+            getQuestion()
+        }else {
+            performSegue(withIdentifier: "toResultVC", sender: nil)
+        }
+    }
+    
     
 
     
     @IBAction func buttonAClicked(_ sender: Any) {
+        control(button: buttonA)
+        controlQuestion()
     }
     
     @IBAction func buttonBClicked(_ sender: Any) {
+        control(button: buttonB)
+        controlQuestion()
     }
     
     @IBAction func buttonCClicked(_ sender: Any) {
+        control(button: buttonC)
+        controlQuestion()
     }
     @IBAction func buttonDClicked(_ sender: Any) {
+        control(button: buttonD)
+        controlQuestion()
     }
     
 }
