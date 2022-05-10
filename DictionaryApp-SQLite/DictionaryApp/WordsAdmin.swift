@@ -49,7 +49,7 @@ init(){
     
     func search(english:String) -> [Words]{
         
-        var wordArray = [Words]()
+        let wordArray = [Words]()
         
         db?.open()
         
