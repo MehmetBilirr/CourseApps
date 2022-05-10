@@ -11,12 +11,41 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var gradesArray = [Grades]()
+    var chosenLesson : Grades?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getData()
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         gradesArray = GradesAdmin().getAllGrades()
         
+        var total = 0
+        
+        for i in gradesArray {
+            total += (i.grade1! + i.grade2!)/2
+            
+        }
+        
+        if gradesArray.count != 0 {
+            
+            navigationItem.prompt = "Average: \(total / gradesArray.count)"
+            
+        }else {
+            
+            navigationItem.prompt = "Average: )"
+            
+        }
+        
+        
+        
+        tableView.reloadData()
     }
     
     
@@ -59,16 +88,23 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let grade = gradesArray[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "gradeCell", for: indexPath) as! GradeCell
-        cell.lessonLabel.text = gradesArray[indexPath.row].lesson_name
-        cell.grade1.text = grade.lesson_name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gradeCell") as! GradeCell
+        cell.lessonLabel.text = grade.lesson_name
         cell.grade1.text = String(grade.grade1!)
         cell.grade2.text = String(grade.grade2!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenLesson = gradesArray[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.chosenLesson = chosenLesson
+        }
     }
     
     

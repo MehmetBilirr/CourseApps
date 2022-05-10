@@ -12,9 +12,9 @@ class GradeCell: UITableViewCell {
     @IBOutlet weak var grade2: UILabel!
     @IBOutlet weak var grade1: UILabel!
     @IBOutlet weak var lessonLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

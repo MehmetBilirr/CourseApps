@@ -20,6 +20,16 @@ class SettingsVC: UIViewController {
     
 
     @IBAction func addClicked(_ sender: Any) {
+        
+        if let lessonName = lessonText.text, let grade1 = grade1Text.text, let grade2 = grade2Text.text {
+            
+            if let g1 = Int(grade1),let g2 = Int(grade2){
+                
+                GradesAdmin().addGrade(lessonName: lessonName, grade1: g1, grade2: g2)
+            }
+            
+            
+        }
     }
     
 

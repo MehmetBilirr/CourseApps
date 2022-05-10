@@ -22,26 +22,26 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gradeCell" id="QnH-K5-zkP" customClass="GradeCell" customModule="GradeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QnH-K5-zkP" id="oTs-UT-qzw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lesson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5VY-HN-gqC">
-                                                    <rect key="frame" x="20" y="11" width="54" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="54" height="22"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <color key="textColor" name="AccentColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="c05-o2-rBy">
-                                                    <rect key="frame" x="180" y="10" width="54" height="21"/>
+                                                    <rect key="frame" x="180" y="10" width="54" height="21.5"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VAo-zS-hsH">
-                                                    <rect key="frame" x="339" y="11" width="57" height="21.5"/>
+                                                    <rect key="frame" x="339" y="11" width="57" height="22"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -106,7 +106,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="zg5-hm-AH6"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -115,13 +114,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="j4x-l2-f0b"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Grade2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0zs-ps-x5q">
                                 <rect key="frame" x="97" y="476" width="221" height="34"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -141,7 +138,21 @@
                             <constraint firstItem="Phi-7l-SeC" firstAttribute="leading" secondItem="SP4-Vn-T9C" secondAttribute="leading" constant="97" id="yWq-YI-yPW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Grade Details" id="eRr-JH-Ihr"/>
+                    <navigationItem key="navigationItem" title="Grade Details" id="eRr-JH-Ihr">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Delete" id="Efj-9I-s3v">
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="deleteClicked:" destination="nRl-v2-Tve" id="bSJ-fc-Xt6"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Update" id="mFU-t7-GzX">
+                                <connections>
+                                    <action selector="updateClicked:" destination="nRl-v2-Tve" id="rZQ-KW-Jlp"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="grade1Text" destination="ipX-NK-Kva" id="04J-eH-G0P"/>
                         <outlet property="grade2Text" destination="0zs-ps-x5q" id="RvA-we-7w7"/>
@@ -165,7 +176,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="glL-oA-VO4"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -174,7 +184,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="bLk-cg-88T"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -183,7 +192,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="vfU-XG-UFm"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -229,14 +237,7 @@
                             <constraint firstItem="75R-87-E0W" firstAttribute="bottom" secondItem="Xzf-g2-6zf" secondAttribute="bottom" constant="200" id="zga-1v-FWA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Grade" id="Yf2-OT-Rzz">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Delete" id="OA1-e4-8IC">
-                                <color key="tintColor" systemColor="systemRedColor"/>
-                            </barButtonItem>
-                            <barButtonItem title="Update" id="nFp-S1-Rhc"/>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add Grade" id="Yf2-OT-Rzz"/>
                     <connections>
                         <outlet property="grade1Text" destination="CCJ-18-CLc" id="Glq-b2-def"/>
                         <outlet property="grade2Text" destination="q11-gC-EWw" id="3dp-Lr-huS"/>
