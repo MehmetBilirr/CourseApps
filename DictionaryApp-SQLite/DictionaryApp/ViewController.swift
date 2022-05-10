@@ -30,6 +30,38 @@ class ViewController: UIViewController {
         
         
     }
+    
+    func getData(){
+        
+        
+        let bundle = Bundle.main.path(forResource: "dictionary", ofType: ".sqlite")!
+        
+        let target = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        let fileManager = FileManager.default
+        
+        let file = URL(fileURLWithPath: target).appendingPathComponent("dictionary.sqlite")
+        
+        if fileManager.fileExists(atPath: file.path) {
+            
+            
+        }else {
+            
+            do {
+                
+                try fileManager.copyItem(atPath: bundle, toPath: file.path)
+                
+            }catch{
+                print(error)
+            }
+            
+            
+        }
+        
+        }
+    
+    
+    
 
 
 }
