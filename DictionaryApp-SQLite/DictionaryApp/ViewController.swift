@@ -16,12 +16,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let word1 = Words(word_id: 1, word_eng: "Table", word_tr: "Masa")
-        let word2 = Words(word_id: 2, word_eng: "Door", word_tr: "Kapı")
-        let word3 = Words(word_id: 3, word_eng: "Window", word_tr: "Pencere")
-        wordsArray.append(word1)
-        wordsArray.append(word2)
-        wordsArray.append(word3)
+        getData()
+        let wordsAdmin = WordsAdmin()
+        wordsArray = wordsAdmin.getWords()
+        
+        
+        
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -98,6 +99,8 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
 
 extension ViewController:UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Arama Sonucu : \(searchText)")
+        
+        wordsArray = WordsAdmin().search(english: searchText)
+        tableView.reloadData()
     }
 }

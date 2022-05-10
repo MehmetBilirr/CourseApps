@@ -16,7 +16,7 @@ init(){
     
     let target = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
     
-    let file = URL(fileURLWithPath: target).appendingPathComponent("FlagQuiz.sqlite")
+    let file = URL(fileURLWithPath: target).appendingPathComponent("dictionary.sqlite")
     
     db = FMDatabase(path: file.path)
     
@@ -30,9 +30,10 @@ init(){
         
         do {
             
-            let rs = try db!.executeQuery("SELECT * FROM words ", values: nil)
+            let rs = try db!.executeQuery("SELECT * FROM words", values: nil)
             while (rs.next()) {
-                let word = Words(word_id: Int(rs.string(forColumn: "word_id"))!, word_eng: rs.string(forColumn: "word_eng"), word_tr: rs.string(forColumn: "word_tr"))
+                let word = Words(word_id: Int(rs.string(forColumn: "word_id"))!, word_eng: rs.string(forColumn: "word_eng")!, word_tr: rs.string(forColumn: "word_tr")!)
+                wordArray.append(word)
             }
             
             

@@ -12,8 +12,8 @@
 		F09D1420282A7377008AD066 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D141B282A7377008AD066 /* FMDatabasePool.m */; };
 		F09D1421282A7377008AD066 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D141C282A7377008AD066 /* FMDatabaseQueue.m */; };
 		F09D1422282A7377008AD066 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D141D282A7377008AD066 /* FMDatabaseAdditions.m */; };
-		F09D1426282A73D2008AD066 /* dictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F09D1425282A73D2008AD066 /* dictionary.sqlite */; };
 		F09D1428282A741F008AD066 /* WordsAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D1427282A741F008AD066 /* WordsAdmin.swift */; };
+		F09D1430282A7EF1008AD066 /* dictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F09D142F282A7EF1008AD066 /* dictionary.sqlite */; };
 		F0A6F216282A69DE004C54C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6F215282A69DE004C54C1 /* AppDelegate.swift */; };
 		F0A6F218282A69DE004C54C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6F217282A69DE004C54C1 /* SceneDelegate.swift */; };
 		F0A6F21A282A69DE004C54C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6F219282A69DE004C54C1 /* ViewController.swift */; };
@@ -59,8 +59,8 @@
 		F09D141C282A7377008AD066 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		F09D141D282A7377008AD066 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		F09D1424282A73BB008AD066 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		F09D1425282A73D2008AD066 /* dictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dictionary.sqlite; sourceTree = "<group>"; };
 		F09D1427282A741F008AD066 /* WordsAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsAdmin.swift; sourceTree = "<group>"; };
+		F09D142F282A7EF1008AD066 /* dictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dictionary.sqlite; sourceTree = "<group>"; };
 		F0A6F212282A69DE004C54C1 /* DictionaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A6F215282A69DE004C54C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0A6F217282A69DE004C54C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				F0A6F21E282A69DF004C54C1 /* Assets.xcassets */,
 				F0A6F220282A69DF004C54C1 /* LaunchScreen.storyboard */,
 				F0A6F223282A69DF004C54C1 /* Info.plist */,
-				F09D1425282A73D2008AD066 /* dictionary.sqlite */,
+				F09D142F282A7EF1008AD066 /* dictionary.sqlite */,
 				F09D1414282A7377008AD066 /* FMDatabase.h */,
 				F09D1415282A7377008AD066 /* FMDatabase.m */,
 				F09D1418282A7377008AD066 /* FMDatabaseAdditions.h */,
@@ -289,7 +289,7 @@
 				F0A6F222282A69DF004C54C1 /* LaunchScreen.storyboard in Resources */,
 				F0A6F21F282A69DF004C54C1 /* Assets.xcassets in Resources */,
 				F0A6F21D282A69DE004C54C1 /* Main.storyboard in Resources */,
-				F09D1426282A73D2008AD066 /* dictionary.sqlite in Resources */,
+				F09D1430282A7EF1008AD066 /* dictionary.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
