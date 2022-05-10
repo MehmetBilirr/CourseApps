@@ -14,14 +14,40 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getData()
+        gradesArray = GradesAdmin().getAllGrades()
         
-        let g1 = Grades(grade_id: 1, lesson_name: "Math", grade1: 90, grade2: 90)
-        let g2 = Grades(grade_id: 2, lesson_name: "Chemistry", grade1: 80, grade2: 90)
-        gradesArray.append(g1)
-        gradesArray.append(g2)
-        tableView.delegate = self
-        tableView.dataSource = self
     }
+    
+    
+    func getData(){
+        
+        
+        let bundle = Bundle.main.path(forResource: "grades", ofType: ".sqlite")!
+        
+        let target = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        let fileManager = FileManager.default
+        
+        let file = URL(fileURLWithPath: target).appendingPathComponent("grades.sqlite")
+        
+        if fileManager.fileExists(atPath: file.path) {
+            
+            
+        }else {
+            
+            do {
+                
+                try fileManager.copyItem(atPath: bundle, toPath: file.path)
+                
+            }catch{
+                print(error)
+            }
+            
+            
+        }
+        
+        }
 
 
 }

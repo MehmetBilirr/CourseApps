@@ -20,6 +20,13 @@
 		F09D14B0282ACDE3008AD066 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D14AF282ACDE3008AD066 /* SettingsVC.swift */; };
 		F09D14B2282ACDF2008AD066 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D14B1282ACDF2008AD066 /* DetailsVC.swift */; };
 		F09D14B4282ACFE3008AD066 /* Grades.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D14B3282ACFE3008AD066 /* Grades.swift */; };
+		F09D14DA282AD9E8008AD066 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D14D4282AD9E8008AD066 /* FMDatabaseQueue.m */; };
+		F09D14DB282AD9E8008AD066 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D14D5282AD9E8008AD066 /* FMDatabasePool.m */; };
+		F09D14DC282AD9E8008AD066 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D14D6282AD9E8008AD066 /* FMResultSet.m */; };
+		F09D14DD282AD9E8008AD066 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D14D7282AD9E8008AD066 /* FMDatabaseAdditions.m */; };
+		F09D14DE282AD9E8008AD066 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D14D8282AD9E8008AD066 /* FMDatabase.m */; };
+		F09D14E2282ADB88008AD066 /* GradesAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D14E1282ADB88008AD066 /* GradesAdmin.swift */; };
+		F09D14E4282ADD29008AD066 /* grades.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F09D14E3282ADD29008AD066 /* grades.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +64,21 @@
 		F09D14AF282ACDE3008AD066 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		F09D14B1282ACDF2008AD066 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		F09D14B3282ACFE3008AD066 /* Grades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grades.swift; sourceTree = "<group>"; };
+		F09D14CD282AD9C2008AD066 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F09D14CE282AD9E8008AD066 /* GradeApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GradeApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		F09D14CF282AD9E8008AD066 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		F09D14D0282AD9E8008AD066 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		F09D14D1282AD9E8008AD066 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F09D14D2282AD9E8008AD066 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F09D14D3282AD9E8008AD066 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F09D14D4282AD9E8008AD066 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F09D14D5282AD9E8008AD066 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		F09D14D6282AD9E8008AD066 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		F09D14D7282AD9E8008AD066 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F09D14D8282AD9E8008AD066 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		F09D14D9282AD9E8008AD066 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		F09D14E1282ADB88008AD066 /* GradesAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesAdmin.swift; sourceTree = "<group>"; };
+		F09D14E3282ADD29008AD066 /* grades.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = grades.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +113,7 @@
 				F09D148D282ACB90008AD066 /* GradeAppTests */,
 				F09D1497282ACB90008AD066 /* GradeAppUITests */,
 				F09D1475282ACB8F008AD066 /* Products */,
+				F09D14CC282AD9C2008AD066 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,17 +130,31 @@
 		F09D1476282ACB8F008AD066 /* GradeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F09D14E3282ADD29008AD066 /* grades.sqlite */,
 				F09D1477282ACB8F008AD066 /* AppDelegate.swift */,
 				F09D1479282ACB8F008AD066 /* SceneDelegate.swift */,
 				F09D147B282ACB8F008AD066 /* ViewController.swift */,
 				F09D14B1282ACDF2008AD066 /* DetailsVC.swift */,
 				F09D14AF282ACDE3008AD066 /* SettingsVC.swift */,
 				F09D14A9282ACC7C008AD066 /* GradeCell.swift */,
+				F09D14B3282ACFE3008AD066 /* Grades.swift */,
+				F09D14E1282ADB88008AD066 /* GradesAdmin.swift */,
 				F09D147D282ACB8F008AD066 /* Main.storyboard */,
 				F09D1480282ACB90008AD066 /* Assets.xcassets */,
 				F09D1482282ACB90008AD066 /* LaunchScreen.storyboard */,
 				F09D1485282ACB90008AD066 /* Info.plist */,
-				F09D14B3282ACFE3008AD066 /* Grades.swift */,
+				F09D14CF282AD9E8008AD066 /* FMDatabase.h */,
+				F09D14D8282AD9E8008AD066 /* FMDatabase.m */,
+				F09D14D3282AD9E8008AD066 /* FMDatabaseAdditions.h */,
+				F09D14D7282AD9E8008AD066 /* FMDatabaseAdditions.m */,
+				F09D14D9282AD9E8008AD066 /* FMDatabasePool.h */,
+				F09D14D5282AD9E8008AD066 /* FMDatabasePool.m */,
+				F09D14D2282AD9E8008AD066 /* FMDatabaseQueue.h */,
+				F09D14D4282AD9E8008AD066 /* FMDatabaseQueue.m */,
+				F09D14D0282AD9E8008AD066 /* FMDB.h */,
+				F09D14D1282AD9E8008AD066 /* FMResultSet.h */,
+				F09D14D6282AD9E8008AD066 /* FMResultSet.m */,
+				F09D14CE282AD9E8008AD066 /* GradeApp-Bridging-Header.h */,
 			);
 			path = GradeApp;
 			sourceTree = "<group>";
@@ -137,6 +174,14 @@
 				F09D149A282ACB90008AD066 /* GradeAppUITestsLaunchTests.swift */,
 			);
 			path = GradeAppUITests;
+			sourceTree = "<group>";
+		};
+		F09D14CC282AD9C2008AD066 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F09D14CD282AD9C2008AD066 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +252,7 @@
 				TargetAttributes = {
 					F09D1473282ACB8F008AD066 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 					};
 					F09D1489282ACB90008AD066 = {
 						CreatedOnToolsVersion = 13.3;
@@ -246,6 +292,7 @@
 				F09D1484282ACB90008AD066 /* LaunchScreen.storyboard in Resources */,
 				F09D1481282ACB90008AD066 /* Assets.xcassets in Resources */,
 				F09D147F282ACB8F008AD066 /* Main.storyboard in Resources */,
+				F09D14E4282ADD29008AD066 /* grades.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,9 +318,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09D147C282ACB8F008AD066 /* ViewController.swift in Sources */,
+				F09D14DA282AD9E8008AD066 /* FMDatabaseQueue.m in Sources */,
 				F09D14B2282ACDF2008AD066 /* DetailsVC.swift in Sources */,
+				F09D14DE282AD9E8008AD066 /* FMDatabase.m in Sources */,
 				F09D14AA282ACC7C008AD066 /* GradeCell.swift in Sources */,
+				F09D14DC282AD9E8008AD066 /* FMResultSet.m in Sources */,
+				F09D14DB282AD9E8008AD066 /* FMDatabasePool.m in Sources */,
+				F09D14E2282ADB88008AD066 /* GradesAdmin.swift in Sources */,
 				F09D14B4282ACFE3008AD066 /* Grades.swift in Sources */,
+				F09D14DD282AD9E8008AD066 /* FMDatabaseAdditions.m in Sources */,
 				F09D1478282ACB8F008AD066 /* AppDelegate.swift in Sources */,
 				F09D147A282ACB8F008AD066 /* SceneDelegate.swift in Sources */,
 				F09D14B0282ACDE3008AD066 /* SettingsVC.swift in Sources */,
@@ -451,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7FLPT7M2FL;
@@ -469,6 +523,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mehmetbilir.GradeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "GradeApp/GradeApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -479,6 +535,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7FLPT7M2FL;
@@ -497,6 +554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mehmetbilir.GradeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "GradeApp/GradeApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
