@@ -22,6 +22,14 @@
 		F036A378282BCBCD0093E0EB /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036A377282BCBCD0093E0EB /* Categories.swift */; };
 		F036A37A282BCC360093E0EB /* Directors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036A379282BCC360093E0EB /* Directors.swift */; };
 		F036A381282BCCC10093E0EB /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036A380282BCCC10093E0EB /* Movies.swift */; };
+		F036A390282BEC190093E0EB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F036A385282BEC190093E0EB /* FMDatabaseQueue.m */; };
+		F036A391282BEC190093E0EB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F036A389282BEC190093E0EB /* FMDatabaseAdditions.m */; };
+		F036A392282BEC190093E0EB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F036A38C282BEC190093E0EB /* FMResultSet.m */; };
+		F036A393282BEC190093E0EB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F036A38D282BEC190093E0EB /* FMDatabasePool.m */; };
+		F036A394282BEC190093E0EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F036A38F282BEC190093E0EB /* FMDatabase.m */; };
+		F036A396282BEC3F0093E0EB /* moviesApp.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F036A395282BEC3E0093E0EB /* moviesApp.sqlite */; };
+		F036A39A282BECB50093E0EB /* MoviesAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036A399282BECB50093E0EB /* MoviesAdmin.swift */; };
+		F036A39C282BED8B0093E0EB /* CategoriesAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036A39B282BED8B0093E0EB /* CategoriesAdmin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +69,22 @@
 		F036A377282BCBCD0093E0EB /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		F036A379282BCC360093E0EB /* Directors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directors.swift; sourceTree = "<group>"; };
 		F036A380282BCCC10093E0EB /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		F036A383282BEC010093E0EB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F036A384282BEC190093E0EB /* MoviesApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoviesApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		F036A385282BEC190093E0EB /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F036A386282BEC190093E0EB /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		F036A387282BEC190093E0EB /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F036A388282BEC190093E0EB /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		F036A389282BEC190093E0EB /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F036A38A282BEC190093E0EB /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		F036A38B282BEC190093E0EB /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F036A38C282BEC190093E0EB /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		F036A38D282BEC190093E0EB /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		F036A38E282BEC190093E0EB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F036A38F282BEC190093E0EB /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		F036A395282BEC3E0093E0EB /* moviesApp.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = moviesApp.sqlite; sourceTree = "<group>"; };
+		F036A399282BECB50093E0EB /* MoviesAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAdmin.swift; sourceTree = "<group>"; };
+		F036A39B282BED8B0093E0EB /* CategoriesAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAdmin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +115,12 @@
 		F036A335282BC3280093E0EB = {
 			isa = PBXGroup;
 			children = (
+				F036A395282BEC3E0093E0EB /* moviesApp.sqlite */,
 				F036A340282BC3280093E0EB /* MoviesApp */,
 				F036A357282BC32B0093E0EB /* MoviesAppTests */,
 				F036A361282BC32B0093E0EB /* MoviesAppUITests */,
 				F036A33F282BC3280093E0EB /* Products */,
+				F036A382282BEC010093E0EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +137,8 @@
 		F036A340282BC3280093E0EB /* MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
+				F036A399282BECB50093E0EB /* MoviesAdmin.swift */,
+				F036A39B282BED8B0093E0EB /* CategoriesAdmin.swift */,
 				F036A37D282BCCA00093E0EB /* Delegate */,
 				F036A37C282BCC8C0093E0EB /* VC */,
 				F036A37B282BCC770093E0EB /* Entity */,
@@ -118,6 +146,18 @@
 				F036A34A282BC32B0093E0EB /* Assets.xcassets */,
 				F036A34C282BC32B0093E0EB /* LaunchScreen.storyboard */,
 				F036A34F282BC32B0093E0EB /* Info.plist */,
+				F036A388282BEC190093E0EB /* FMDatabase.h */,
+				F036A38F282BEC190093E0EB /* FMDatabase.m */,
+				F036A387282BEC190093E0EB /* FMDatabaseAdditions.h */,
+				F036A389282BEC190093E0EB /* FMDatabaseAdditions.m */,
+				F036A38A282BEC190093E0EB /* FMDatabasePool.h */,
+				F036A38D282BEC190093E0EB /* FMDatabasePool.m */,
+				F036A38E282BEC190093E0EB /* FMDatabaseQueue.h */,
+				F036A385282BEC190093E0EB /* FMDatabaseQueue.m */,
+				F036A386282BEC190093E0EB /* FMDB.h */,
+				F036A38B282BEC190093E0EB /* FMResultSet.h */,
+				F036A38C282BEC190093E0EB /* FMResultSet.m */,
+				F036A384282BEC190093E0EB /* MoviesApp-Bridging-Header.h */,
 			);
 			path = MoviesApp;
 			sourceTree = "<group>";
@@ -167,6 +207,14 @@
 				F036A343282BC3280093E0EB /* SceneDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		F036A382282BEC010093E0EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F036A383282BEC010093E0EB /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +285,7 @@
 				TargetAttributes = {
 					F036A33D282BC3280093E0EB = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 					};
 					F036A353282BC32B0093E0EB = {
 						CreatedOnToolsVersion = 13.3;
@@ -273,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F036A396282BEC3F0093E0EB /* moviesApp.sqlite in Resources */,
 				F036A34E282BC32B0093E0EB /* LaunchScreen.storyboard in Resources */,
 				F036A34B282BC32B0093E0EB /* Assets.xcassets in Resources */,
 				F036A349282BC3280093E0EB /* Main.storyboard in Resources */,
@@ -302,13 +352,20 @@
 			files = (
 				F036A346282BC3280093E0EB /* MainVC.swift in Sources */,
 				F036A37A282BCC360093E0EB /* Directors.swift in Sources */,
+				F036A393282BEC190093E0EB /* FMDatabasePool.m in Sources */,
+				F036A394282BEC190093E0EB /* FMDatabase.m in Sources */,
 				F036A378282BCBCD0093E0EB /* Categories.swift in Sources */,
 				F036A372282BC89F0093E0EB /* MoviesCVC.swift in Sources */,
 				F036A342282BC3280093E0EB /* AppDelegate.swift in Sources */,
+				F036A390282BEC190093E0EB /* FMDatabaseQueue.m in Sources */,
+				F036A392282BEC190093E0EB /* FMResultSet.m in Sources */,
 				F036A381282BCCC10093E0EB /* Movies.swift in Sources */,
+				F036A391282BEC190093E0EB /* FMDatabaseAdditions.m in Sources */,
+				F036A39A282BECB50093E0EB /* MoviesAdmin.swift in Sources */,
 				F036A344282BC3280093E0EB /* SceneDelegate.swift in Sources */,
 				F036A374282BCAB60093E0EB /* DetailsVC.swift in Sources */,
 				F036A376282BCAD40093E0EB /* MoviesVC.swift in Sources */,
+				F036A39C282BED8B0093E0EB /* CategoriesAdmin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7FLPT7M2FL;
@@ -501,6 +559,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mehmetbilir.MoviesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MoviesApp/MoviesApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -511,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7FLPT7M2FL;
@@ -529,6 +590,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mehmetbilir.MoviesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MoviesApp/MoviesApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
