@@ -10,21 +10,14 @@ import UIKit
 class MoviesVC: UIViewController {
 
     var movieArray = [Movies]()
+    var chosenCategory : Categories?
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let c1 = Categories(category_id: 1, category_name: "Dram")
-        let c2 = Categories(category_id: 2, category_name: "Action")
         
-        let d1 = Directors(director_id: 1, director_name: "adsad")
-        let d2 = Directors(director_id: 2, director_name: "adfadsad")
         
-        let m1 = Movies(movie_id: 1, movie_name: "Django", movie_year: 2012, movie_image: "django", category: c1, director: d1)
-        let m2 = Movies(movie_id: 2, movie_name: "Inception", movie_year: 2012, movie_image: "inception", category: c2, director: d2)
-        
-        movieArray.append(m1)
-        movieArray.append(m2)
+        movieArray = MoviesAdmin().getMovies(category_id: (chosenCategory?.category_id!)!)
         
         
         collectionView.delegate = self

@@ -11,6 +11,7 @@ class MainVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var categoryArray = [Categories]()
+    var chosenCategory : Categories?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +76,14 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenCategory = categoryArray[indexPath.row]
         performSegue(withIdentifier: "toMoviesVC", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMoviesVC" {
+            let destinationVC = segue.destination as! MoviesVC
+            destinationVC.chosenCategory = chosenCategory
+        }
     }
     
     

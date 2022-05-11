@@ -26,5 +26,6 @@ class Movies {
         self.category = category
         self.director = director
         
+        
     }
 }

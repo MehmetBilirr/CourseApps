@@ -27,9 +27,9 @@
 		F036A392282BEC190093E0EB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F036A38C282BEC190093E0EB /* FMResultSet.m */; };
 		F036A393282BEC190093E0EB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F036A38D282BEC190093E0EB /* FMDatabasePool.m */; };
 		F036A394282BEC190093E0EB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F036A38F282BEC190093E0EB /* FMDatabase.m */; };
-		F036A396282BEC3F0093E0EB /* moviesApp.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F036A395282BEC3E0093E0EB /* moviesApp.sqlite */; };
 		F036A39A282BECB50093E0EB /* MoviesAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036A399282BECB50093E0EB /* MoviesAdmin.swift */; };
 		F036A39C282BED8B0093E0EB /* CategoriesAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036A39B282BED8B0093E0EB /* CategoriesAdmin.swift */; };
+		F036A3A0282BF90C0093E0EB /* moviesApp.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F036A39F282BF90C0093E0EB /* moviesApp.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,9 +82,9 @@
 		F036A38D282BEC190093E0EB /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		F036A38E282BEC190093E0EB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
 		F036A38F282BEC190093E0EB /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		F036A395282BEC3E0093E0EB /* moviesApp.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = moviesApp.sqlite; sourceTree = "<group>"; };
 		F036A399282BECB50093E0EB /* MoviesAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAdmin.swift; sourceTree = "<group>"; };
 		F036A39B282BED8B0093E0EB /* CategoriesAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAdmin.swift; sourceTree = "<group>"; };
+		F036A39F282BF90C0093E0EB /* moviesApp.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = moviesApp.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 		F036A335282BC3280093E0EB = {
 			isa = PBXGroup;
 			children = (
-				F036A395282BEC3E0093E0EB /* moviesApp.sqlite */,
+				F036A39F282BF90C0093E0EB /* moviesApp.sqlite */,
 				F036A340282BC3280093E0EB /* MoviesApp */,
 				F036A357282BC32B0093E0EB /* MoviesAppTests */,
 				F036A361282BC32B0093E0EB /* MoviesAppUITests */,
@@ -322,7 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F036A396282BEC3F0093E0EB /* moviesApp.sqlite in Resources */,
+				F036A3A0282BF90C0093E0EB /* moviesApp.sqlite in Resources */,
 				F036A34E282BC32B0093E0EB /* LaunchScreen.storyboard in Resources */,
 				F036A34B282BC32B0093E0EB /* Assets.xcassets in Resources */,
 				F036A349282BC3280093E0EB /* Main.storyboard in Resources */,
