@@ -106,4 +106,31 @@ class ContactsAdmin {
         
         
     }
+    
+    
+    func search(contact_name:String) -> [Contacts] {
+        var contactArray = [Contacts]()
+        
+        db?.open()
+        
+        do {
+            let rs = try db!.executeQuery("SELECT * FROM contacts WHERE contact_name like '%\(contact_name)%'", values: nil)
+            
+            while rs.next() {
+                let contact = Contacts(contact_id: Int(rs.string(forColumn: "contact_id"))!, contact_name: rs.string(forColumn: "contact_name"), contact_number: rs.string(forColumn: "contact_number"))
+                
+                contactArray.append(contact)
+            }
+            
+            
+        } catch  {
+            print(error.localizedDescription)
+        }
+        
+        
+        db?.close()
+        
+        return contactArray
+        
+    }
 }

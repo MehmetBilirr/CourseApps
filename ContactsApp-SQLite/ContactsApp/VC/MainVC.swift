@@ -123,7 +123,10 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
 extension MainVC:UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("search : \(searchText)")
+        
+        
+        contactArray = ContactsAdmin().search(contact_name: searchText)
+        tableView.reloadData()
     }
     
     
