@@ -66,4 +66,24 @@ class ContactsAdmin {
         
         
     }
+    
+    func updateContact(contact_id:Int,contact_name:String,contact_number:String){
+        
+        db?.open()
+        do {
+            let rs = try db!.executeUpdate("UPDATE contacts SET contact_name = ? , contact_number = ? WHERE contact_id = ?", withArgumentsIn: [contact_name,contact_number,contact_id])
+            
+            
+        }catch{
+            print(error.localizedDescription)
+        }
+        
+        
+        
+        
+        db?.close()
+        
+        
+        
+    }
 }

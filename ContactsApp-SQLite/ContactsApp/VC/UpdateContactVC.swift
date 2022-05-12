@@ -15,11 +15,20 @@ class UpdateContactVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        contactNameText.text = chosenContact?.contact_name
+        contactNumberText.text = chosenContact?.contact_number
     }
     
 
     @IBAction func updateClicked(_ sender: Any) {
+        
+        if let contactId = chosenContact?.contact_id,let contactName = contactNameText.text,let contactNumber = contactNumberText.text{
+            
+            ContactsAdmin().updateContact(contact_id: contactId, contact_name: contactName, contact_number: contactNumber)
+            
+            navigationController?.popViewController(animated: true)
+            
+        }
     }
     
 

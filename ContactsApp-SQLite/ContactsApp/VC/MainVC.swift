@@ -81,6 +81,7 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenContact = contactArray[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: indexPath.row)
     }
     
@@ -88,13 +89,15 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
         
         if segue.identifier == "toDetailsVC" {
             
-            
-            
+            let destinationVC = segue.destination as! ContactDetailsVC
+            destinationVC.chosenContact = chosenContact
             
         }
         
         if segue.identifier == "toUpdateVC" {
             
+            let destination = segue.destination as! UpdateContactVC
+            destination.chosenContact = chosenContact
             
         }
         
@@ -108,8 +111,7 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
         }
         
         let updateAction = UIContextualAction(style: .normal, title: "Update") { contexualAction, view, boolValue in
-            print("Update Clicked ")
-            self.performSegue(withIdentifier: "toDetailsVC", sender: indexPath.row)
+            self.performSegue(withIdentifier: "toUpdateVC", sender: indexPath.row)
         }
         
         return UISwipeActionsConfiguration(actions: [deleteAction,updateAction])
