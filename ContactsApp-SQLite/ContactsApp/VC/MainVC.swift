@@ -13,6 +13,8 @@ class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var contactArray = [Contacts]()
     var chosenContact : Contacts?
+    var isSearching = false
+    var searchWord : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -108,7 +110,14 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contexualAction, view, boolValue in
             ContactsAdmin().deleteContact(contact_id: self.contactArray[indexPath.row].contact_id!)
-            self.contactArray = ContactsAdmin().getContacts()
+            
+            
+            if self.isSearching {
+                self.contactArray = ContactsAdmin().search(contact_name: self.searchWord!)
+            }else{
+                self.contactArray = ContactsAdmin().getContacts()
+            }
+            
             self.tableView.reloadData()
         }
         
@@ -124,8 +133,15 @@ extension MainVC:UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        searchWord = searchText
+        if searchText == "" {
+            
+            self.contactArray = ContactsAdmin().getContacts()
+        }else{
+            self.contactArray = ContactsAdmin().search(contact_name: self.searchWord!)
+        }
         
-        contactArray = ContactsAdmin().search(contact_name: searchText)
+        
         tableView.reloadData()
     }
     

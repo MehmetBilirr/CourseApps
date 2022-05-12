@@ -15,7 +15,8 @@ class ContactDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        contactNameLabel.text = chosenContact?.contact_name
+        contactNumberLabel.text = chosenContact?.contact_number
     }
     
 
