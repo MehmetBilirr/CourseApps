@@ -107,7 +107,9 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contexualAction, view, boolValue in
-            print("Delete  clicked ")
+            ContactsAdmin().deleteContact(contact_id: self.contactArray[indexPath.row].contact_id!)
+            self.contactArray = ContactsAdmin().getContacts()
+            self.tableView.reloadData()
         }
         
         let updateAction = UIContextualAction(style: .normal, title: "Update") { contexualAction, view, boolValue in

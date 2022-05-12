@@ -86,4 +86,24 @@ class ContactsAdmin {
         
         
     }
+    
+    func deleteContact(contact_id:Int){
+        
+        db?.open()
+        do {
+            let rs = try db!.executeUpdate("DELETE FROM contacts WHERE contact_id = ?", withArgumentsIn: [contact_id])
+            
+            
+        }catch{
+            print(error.localizedDescription)
+        }
+        
+        
+        
+        
+        db?.close()
+        
+        
+        
+    }
 }
