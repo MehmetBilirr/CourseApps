@@ -12,6 +12,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var contactArray = [Contacts]()
+    var chosenContact : Contacts?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +23,12 @@ class MainVC: UIViewController {
         tableView.dataSource = self
         
         searchBar.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        contactArray = ContactsAdmin().getContacts()
+        tableView.reloadData()
     }
 
     
@@ -80,6 +87,8 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toDetailsVC" {
+            
+            
             
             
         }

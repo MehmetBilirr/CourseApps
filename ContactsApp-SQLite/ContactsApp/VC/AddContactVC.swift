@@ -14,20 +14,22 @@ class AddContactVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func saveClicked(_ sender: Any) {
+        
+        if let contactName = contactNameText.text,let contactNumber = contactNumberText.text{
+            
+            ContactsAdmin().addContact(contact_name: contactName, contact_number: contactNumber)
+            
+            navigationController?.popViewController(animated: true)
+            
+        }
+        
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

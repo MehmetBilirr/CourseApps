@@ -46,4 +46,24 @@ class ContactsAdmin {
         
         
     }
+    
+    func addContact(contact_name:String,contact_number:String){
+        
+        db?.open()
+        do {
+            let rs = try db!.executeUpdate("INSERT INTO contacts (contact_name,contact_number) VALUES (?,?)", withArgumentsIn: [contact_name,contact_number])
+            
+            
+        }catch{
+            print(error.localizedDescription)
+        }
+        
+        
+        
+        
+        db?.close()
+        
+        
+        
+    }
 }
