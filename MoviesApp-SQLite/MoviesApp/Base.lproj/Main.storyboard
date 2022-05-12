@@ -69,8 +69,8 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="django" translatesAutoresizingMaskIntoConstraints="NO" id="TWg-Lh-Nnk">
                                                     <rect key="frame" x="17" y="8" width="142" height="226"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Django" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="FNj-4x-c53">
-                                                    <rect key="frame" x="61" y="244" width="54" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Django" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="FNj-4x-c53">
+                                                    <rect key="frame" x="17" y="244" width="142" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="C2z-zX-hPO"/>
                                                     </constraints>
@@ -98,14 +98,14 @@
                                                 <constraint firstItem="TWg-Lh-Nnk" firstAttribute="centerX" secondItem="FNj-4x-c53" secondAttribute="centerX" id="7tY-th-gZq"/>
                                                 <constraint firstItem="FNj-4x-c53" firstAttribute="centerX" secondItem="AHS-xg-eRe" secondAttribute="centerX" id="GVo-nB-tnt"/>
                                                 <constraint firstAttribute="bottom" secondItem="XlU-JG-H6B" secondAttribute="bottom" id="Gmk-cb-RSR"/>
-                                                <constraint firstItem="FNj-4x-c53" firstAttribute="leading" secondItem="XlU-JG-H6B" secondAttribute="leading" id="MD9-mn-9HM"/>
+                                                <constraint firstItem="FNj-4x-c53" firstAttribute="leading" secondItem="XlU-JG-H6B" secondAttribute="leading" constant="-44" id="MD9-mn-9HM"/>
                                                 <constraint firstItem="AHS-xg-eRe" firstAttribute="top" secondItem="FNj-4x-c53" secondAttribute="bottom" constant="5" id="PZ7-TV-WJA"/>
                                                 <constraint firstItem="FNj-4x-c53" firstAttribute="top" secondItem="TWg-Lh-Nnk" secondAttribute="bottom" constant="10" id="RFv-UM-u1d"/>
-                                                <constraint firstItem="FNj-4x-c53" firstAttribute="trailing" secondItem="XlU-JG-H6B" secondAttribute="trailing" id="aKm-Rc-Rn3"/>
+                                                <constraint firstItem="FNj-4x-c53" firstAttribute="trailing" secondItem="XlU-JG-H6B" secondAttribute="trailing" constant="44" id="aKm-Rc-Rn3"/>
                                                 <constraint firstItem="XlU-JG-H6B" firstAttribute="top" secondItem="FNj-4x-c53" secondAttribute="bottom" constant="23" id="at0-Eq-Yae"/>
                                                 <constraint firstItem="TWg-Lh-Nnk" firstAttribute="leading" secondItem="Eap-M8-4Hb" secondAttribute="leading" constant="17" id="eYp-YC-ZKY"/>
                                                 <constraint firstItem="TWg-Lh-Nnk" firstAttribute="top" secondItem="Eap-M8-4Hb" secondAttribute="topMargin" id="ejl-Zg-4Lh"/>
-                                                <constraint firstItem="FNj-4x-c53" firstAttribute="leading" secondItem="Eap-M8-4Hb" secondAttribute="leading" constant="61" id="h3q-Q1-2Lo"/>
+                                                <constraint firstItem="FNj-4x-c53" firstAttribute="leading" secondItem="Eap-M8-4Hb" secondAttribute="leading" constant="17" id="h3q-Q1-2Lo"/>
                                                 <constraint firstAttribute="bottom" secondItem="AHS-xg-eRe" secondAttribute="bottom" constant="28" id="vgA-4E-Aqq"/>
                                             </constraints>
                                         </collectionViewCellContentView>
