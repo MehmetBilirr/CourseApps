@@ -19,6 +19,7 @@
 		F0A6F246282A6B2E004C54C1 /* DictionaryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6F245282A6B2E004C54C1 /* DictionaryViewCell.swift */; };
 		F0A6F248282A6B6C004C54C1 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6F247282A6B6C004C54C1 /* DetailsVC.swift */; };
 		F0A6F24A282A6BDE004C54C1 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6F249282A6BDE004C54C1 /* Words.swift */; };
+		F0C3EAF3283422D6004FB7CC /* DictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3EAF2283422D6004FB7CC /* DictionaryResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F0A6F245282A6B2E004C54C1 /* DictionaryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewCell.swift; sourceTree = "<group>"; };
 		F0A6F247282A6B6C004C54C1 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		F0A6F249282A6BDE004C54C1 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		F0C3EAF2283422D6004FB7CC /* DictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +107,9 @@
 		F0A6F214282A69DE004C54C1 /* DictionaryApp */ = {
 			isa = PBXGroup;
 			children = (
-				F0A6F215282A69DE004C54C1 /* AppDelegate.swift */,
-				F0A6F217282A69DE004C54C1 /* SceneDelegate.swift */,
-				F0A6F219282A69DE004C54C1 /* ViewController.swift */,
-				F0A6F247282A6B6C004C54C1 /* DetailsVC.swift */,
-				F0A6F245282A6B2E004C54C1 /* DictionaryViewCell.swift */,
-				F0A6F249282A6BDE004C54C1 /* Words.swift */,
+				F0C3EAEF28341C46004FB7CC /* Entity */,
+				F0C3EAEE28341C33004FB7CC /* Delegates */,
+				F0C3EAED28341C10004FB7CC /* ViewControllers */,
 				F0A6F21B282A69DE004C54C1 /* Main.storyboard */,
 				F0A6F21E282A69DF004C54C1 /* Assets.xcassets */,
 				F0A6F220282A69DF004C54C1 /* LaunchScreen.storyboard */,
@@ -134,6 +133,34 @@
 				F0A6F238282A69DF004C54C1 /* DictionaryAppUITestsLaunchTests.swift */,
 			);
 			path = DictionaryAppUITests;
+			sourceTree = "<group>";
+		};
+		F0C3EAED28341C10004FB7CC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0A6F219282A69DE004C54C1 /* ViewController.swift */,
+				F0A6F245282A6B2E004C54C1 /* DictionaryViewCell.swift */,
+				F0A6F247282A6B6C004C54C1 /* DetailsVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F0C3EAEE28341C33004FB7CC /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				F0A6F217282A69DE004C54C1 /* SceneDelegate.swift */,
+				F0A6F215282A69DE004C54C1 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		F0C3EAEF28341C46004FB7CC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F0A6F249282A6BDE004C54C1 /* Words.swift */,
+				F0C3EAF2283422D6004FB7CC /* DictionaryResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +300,7 @@
 				F0A6F24A282A6BDE004C54C1 /* Words.swift in Sources */,
 				F0A6F218282A69DE004C54C1 /* SceneDelegate.swift in Sources */,
 				F0A6F248282A6B6C004C54C1 /* DetailsVC.swift in Sources */,
+				F0C3EAF3283422D6004FB7CC /* DictionaryResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

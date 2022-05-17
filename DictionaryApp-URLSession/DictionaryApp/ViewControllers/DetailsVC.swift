@@ -16,8 +16,8 @@ class DetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        trLabel.text = selectedWord?.word_tr
-        engLabel.text = selectedWord?.word_eng
+        trLabel.text = selectedWord?.turkce
+        engLabel.text = selectedWord?.ingilizce
     }
     
 

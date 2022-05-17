@@ -16,16 +16,43 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let word1 = Words(word_id: 1, word_eng: "Table", word_tr: "Masa")
-        let word2 = Words(word_id: 2, word_eng: "Door", word_tr: "Kapı")
-        let word3 = Words(word_id: 3, word_eng: "Window", word_tr: "Pencere")
-        wordsArray.append(word1)
-        wordsArray.append(word2)
-        wordsArray.append(word3)
+        
         
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        GetWords()
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    func GetWords(){
+        
+        let url = URL(string: "http://kasimadalan.pe.hu/sozluk/tum_kelimeler.php")!
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if error != nil || data == nil {
+                print(error?.localizedDescription)
+            }
+            
+            do{
+                let answer = try JSONDecoder().decode(DictionaryResponse.self, from: data!)
+                if let list = answer.kelimeler{
+                    self.wordsArray = list
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            }catch{
+                print(error.localizedDescription)
+            }
+        }.resume()
         
         
         
@@ -41,8 +68,8 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DictionaryCell", for: indexPath) as! DictionaryViewCell
-        cell.trText.text = wordsArray[indexPath.row].word_tr
-        cell.engLabel.text = wordsArray[indexPath.row].word_eng
+        cell.trText.text = wordsArray[indexPath.row].turkce
+        cell.engLabel.text = wordsArray[indexPath.row].ingilizce
         return cell
     }
     
