@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var gradesArray = [Grades]()
+    var chosenGrade : Grades?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,7 +83,15 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenGrade = gradesArray[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.chosenGrade = chosenGrade
+            
+        }
     }
     
     

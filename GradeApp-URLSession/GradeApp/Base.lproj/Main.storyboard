@@ -142,8 +142,15 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Delete" id="OA1-e4-8IC">
                                 <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="deleteClicked:" destination="nRl-v2-Tve" id="Nsp-gs-vMp"/>
+                                </connections>
                             </barButtonItem>
-                            <barButtonItem title="Update" id="nFp-S1-Rhc"/>
+                            <barButtonItem title="Update" id="nFp-S1-Rhc">
+                                <connections>
+                                    <action selector="updateClicked:" destination="nRl-v2-Tve" id="64t-dN-Y6s"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
