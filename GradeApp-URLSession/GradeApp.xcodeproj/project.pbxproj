@@ -20,6 +20,7 @@
 		F09D14B0282ACDE3008AD066 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D14AF282ACDE3008AD066 /* SettingsVC.swift */; };
 		F09D14B2282ACDF2008AD066 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D14B1282ACDF2008AD066 /* DetailsVC.swift */; };
 		F09D14B4282ACFE3008AD066 /* Grades.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D14B3282ACFE3008AD066 /* Grades.swift */; };
+		F0C3EAF928342A24004FB7CC /* GradesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3EAF828342A24004FB7CC /* GradesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		F09D14AF282ACDE3008AD066 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		F09D14B1282ACDF2008AD066 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		F09D14B3282ACFE3008AD066 /* Grades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grades.swift; sourceTree = "<group>"; };
+		F0C3EAF828342A24004FB7CC /* GradesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,17 +109,13 @@
 		F09D1476282ACB8F008AD066 /* GradeApp */ = {
 			isa = PBXGroup;
 			children = (
-				F09D1477282ACB8F008AD066 /* AppDelegate.swift */,
-				F09D1479282ACB8F008AD066 /* SceneDelegate.swift */,
-				F09D147B282ACB8F008AD066 /* ViewController.swift */,
-				F09D14B1282ACDF2008AD066 /* DetailsVC.swift */,
-				F09D14AF282ACDE3008AD066 /* SettingsVC.swift */,
-				F09D14A9282ACC7C008AD066 /* GradeCell.swift */,
+				F0C3EAF728342A12004FB7CC /* Entity */,
+				F0C3EAF5283429F4004FB7CC /* Delegates */,
+				F0C3EAF4283429DA004FB7CC /* ViewControllers */,
 				F09D147D282ACB8F008AD066 /* Main.storyboard */,
 				F09D1480282ACB90008AD066 /* Assets.xcassets */,
 				F09D1482282ACB90008AD066 /* LaunchScreen.storyboard */,
 				F09D1485282ACB90008AD066 /* Info.plist */,
-				F09D14B3282ACFE3008AD066 /* Grades.swift */,
 			);
 			path = GradeApp;
 			sourceTree = "<group>";
@@ -137,6 +135,35 @@
 				F09D149A282ACB90008AD066 /* GradeAppUITestsLaunchTests.swift */,
 			);
 			path = GradeAppUITests;
+			sourceTree = "<group>";
+		};
+		F0C3EAF4283429DA004FB7CC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F09D147B282ACB8F008AD066 /* ViewController.swift */,
+				F09D14B1282ACDF2008AD066 /* DetailsVC.swift */,
+				F09D14AF282ACDE3008AD066 /* SettingsVC.swift */,
+				F09D14A9282ACC7C008AD066 /* GradeCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F0C3EAF5283429F4004FB7CC /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				F09D1477282ACB8F008AD066 /* AppDelegate.swift */,
+				F09D1479282ACB8F008AD066 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		F0C3EAF728342A12004FB7CC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F09D14B3282ACFE3008AD066 /* Grades.swift */,
+				F0C3EAF828342A24004FB7CC /* GradesResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +301,7 @@
 				F09D14B2282ACDF2008AD066 /* DetailsVC.swift in Sources */,
 				F09D14AA282ACC7C008AD066 /* GradeCell.swift in Sources */,
 				F09D14B4282ACFE3008AD066 /* Grades.swift in Sources */,
+				F0C3EAF928342A24004FB7CC /* GradesResponse.swift in Sources */,
 				F09D1478282ACB8F008AD066 /* AppDelegate.swift in Sources */,
 				F09D147A282ACB8F008AD066 /* SceneDelegate.swift in Sources */,
 				F09D14B0282ACDE3008AD066 /* SettingsVC.swift in Sources */,
