@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-        GetWords()
+        getWords()
         
         
         
@@ -31,7 +31,38 @@ class ViewController: UIViewController {
         
     }
     
-    func GetWords(){
+    func search(searchWord:String){
+        
+        var request = URLRequest(url: URL(string: "http://kasimadalan.pe.hu/sozluk/kelime_ara.php")!)
+        request.httpMethod = "POST"
+        let postString = "ingilizce=\(searchWord)"
+        request.httpBody = postString.data(using: .utf8)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil || data == nil {
+                print(error?.localizedDescription)
+            }
+            
+            do{
+                let answer = try JSONDecoder().decode(DictionaryResponse.self, from: data!)
+                if let list = answer.kelimeler{
+                    self.wordsArray = list
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            }catch{
+                print(error.localizedDescription)
+            }
+        }.resume()
+        
+        
+        
+    }
+    
+    
+    func getWords(){
         
         let url = URL(string: "http://kasimadalan.pe.hu/sozluk/tum_kelimeler.php")!
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -93,6 +124,6 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
 
 extension ViewController:UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Arama Sonucu : \(searchText)")
+        search(searchWord: searchText)
     }
 }
