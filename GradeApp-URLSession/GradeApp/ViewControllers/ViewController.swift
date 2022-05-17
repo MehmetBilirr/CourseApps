@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         getGrades()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        getGrades()
+    }
     
     
     func getGrades(){
