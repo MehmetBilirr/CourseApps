@@ -10,6 +10,7 @@ import UIKit
 class MoviesVC: UIViewController {
 
     var movieArray = [Movies]()
+    var ChosenCategory : Categories?
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,40 @@ class MoviesVC: UIViewController {
         design.minimumInteritemSpacing = 10
         design.minimumLineSpacing = 10
         collectionView.collectionViewLayout = design
+        
+        if let category = ChosenCategory {
+            moviesByCategoryID(category_id: category.kategori_id!)
+        }
+        
+        
+    }
+    
+    func moviesByCategoryID(category_id:String){
+        var request = URLRequest(url: URL(string: "http://kasimadalan.pe.hu/filmler/filmler_by_kategori_id.php")!)
+        request.httpMethod = "POST"
+        let postString = "kategori_id=\(category_id)"
+        request.httpBody = postString.data(using: .utf8)
+        
+        URLSession.shared.dataTask(with: request) { data , response , error in
+            if error != nil || data == nil {
+                print("Hata")
+                return
+            }
+            
+            do{
+                let answer = try JSONDecoder().decode(MoviesResponse.self, from: data!)
+                if let list = answer.filmler {
+                    self.movieArray = list
+                }
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+            }catch{
+                print(error.localizedDescription)
+            }
+            }.resume()
         
     }
     
