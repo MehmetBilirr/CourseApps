@@ -11,6 +11,7 @@ class MoviesVC: UIViewController {
 
     var movieArray = [Movies]()
     var ChosenCategory : Categories?
+    var chosenMovie : Movies?
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +101,14 @@ extension MoviesVC:UICollectionViewDelegate,UICollectionViewDataSource,MoviesPro
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        chosenMovie = movieArray[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.chosenMovie = chosenMovie
+        }
     }
     
     
