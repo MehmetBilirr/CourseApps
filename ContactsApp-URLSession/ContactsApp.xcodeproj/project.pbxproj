@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F05D8B4028353CD1005E0294 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D8B3F28353CD1005E0294 /* Contacts.swift */; };
+		F05D8B4328353D3F005E0294 /* ContactsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D8B4228353D3F005E0294 /* ContactsResponse.swift */; };
 		F0C90169282D8FD9002CA3B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C90168282D8FD9002CA3B5 /* AppDelegate.swift */; };
 		F0C9016B282D8FD9002CA3B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9016A282D8FD9002CA3B5 /* SceneDelegate.swift */; };
 		F0C9016D282D8FD9002CA3B5 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9016C282D8FD9002CA3B5 /* MainVC.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F05D8B3F28353CD1005E0294 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		F05D8B4228353D3F005E0294 /* ContactsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsResponse.swift; sourceTree = "<group>"; };
 		F0C90165282D8FD9002CA3B5 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C90168282D8FD9002CA3B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C9016A282D8FD9002CA3B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F05D8B4128353D29005E0294 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F05D8B3F28353CD1005E0294 /* Contacts.swift */,
+				F05D8B4228353D3F005E0294 /* ContactsResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		F0C9015C282D8FD9002CA3B5 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +119,7 @@
 		F0C90167282D8FD9002CA3B5 /* ContactsApp */ = {
 			isa = PBXGroup;
 			children = (
+				F05D8B4128353D29005E0294 /* Entity */,
 				F0C901A4282D91B8002CA3B5 /* Delegates */,
 				F0C901A2282D9175002CA3B5 /* VC */,
 				F0C90171282D8FDA002CA3B5 /* Assets.xcassets */,
@@ -286,6 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05D8B4328353D3F005E0294 /* ContactsResponse.swift in Sources */,
+				F05D8B4028353CD1005E0294 /* Contacts.swift in Sources */,
 				F0C9016D282D8FD9002CA3B5 /* MainVC.swift in Sources */,
 				F0C90169282D8FD9002CA3B5 /* AppDelegate.swift in Sources */,
 				F0C9016B282D8FD9002CA3B5 /* SceneDelegate.swift in Sources */,
@@ -390,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -444,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

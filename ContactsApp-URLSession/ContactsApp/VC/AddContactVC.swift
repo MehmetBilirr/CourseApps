@@ -18,16 +18,41 @@ class AddContactVC: UIViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
+        if contactNameText.text != "" && contactNumberText.text != "" {
+             
+            if let contactName = contactNameText.text,let contactNumber = contactNumberText.text {
+                
+                addContact(contactName: contactName, contactNumber: contactNumber)
+                navigationController?.popViewController(animated: true)
+            }
+            
+        }
+        
+        
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func addContact(contactName:String,contactNumber:String){
+        
+        
+        var request = URLRequest(url: URL(string: "http://kasimadalan.pe.hu/kisiler/insert_kisiler.php")!)
+        
+        request.httpMethod = "POST"
+        let postString = "kisi_ad=\(contactName)&kisi_tel=\(contactNumber)"
+        request.httpBody = postString.data(using: .utf8)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if error != nil || data == nil {
+                print(error?.localizedDescription)
+            }
+            do{
+                try JSONSerialization.jsonObject(with: data!)
+            }catch{
+                print(error.localizedDescription)
+            }
+        }.resume()
     }
-    */
+    
+    
 
 }
