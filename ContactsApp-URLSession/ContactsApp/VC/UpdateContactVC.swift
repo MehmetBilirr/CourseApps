@@ -27,6 +27,7 @@ class UpdateContactVC: UIViewController {
                 update(contact_id: id, contact_name: name, contact_number: number)
             }
         }
+        navigationController?.popViewController(animated: true)
         
         
         

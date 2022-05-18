@@ -52,6 +52,34 @@ class MainVC: UIViewController {
             }
         }.resume()
     }
+    
+    func deleteContact(contact_id:String){
+        
+        
+        var request = URLRequest(url: URL(string: "http://kasimadalan.pe.hu/kisiler/delete_kisiler.php")!)
+        
+        request.httpMethod = "POST"
+        let postString = "kisi_id=\(contact_id)"
+        request.httpBody = postString.data(using: .utf8)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if error != nil || data == nil {
+                print(error?.localizedDescription)
+            }
+            do{
+                try JSONSerialization.jsonObject(with: data!)
+                
+                self.getContacts()
+            }catch{
+                print(error.localizedDescription)
+            }
+        }.resume()
+    }
+    
+    func 
+
+    
+    
 
 
 }
@@ -100,13 +128,16 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contexualAction, view, boolValue in
-            print("Delete  clicked \(self.contactsArray[indexPath.row])")
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [self] contexualAction, view, boolValue in
+            
+            let contact = self.contactsArray[indexPath.row]
+                deleteContact(contact_id: contact.kisi_id)
+            
         }
         
         let updateAction = UIContextualAction(style: .normal, title: "Update") { contexualAction, view, boolValue in
-            print("Update Clicked \(self.contactsArray[indexPath.row])")
-            self.performSegue(withIdentifier: "toDetailsVC", sender: indexPath.row)
+            
+            self.performSegue(withIdentifier: "toUpdateVC", sender: indexPath.row)
         }
         
         return UISwipeActionsConfiguration(actions: [deleteAction,updateAction])
