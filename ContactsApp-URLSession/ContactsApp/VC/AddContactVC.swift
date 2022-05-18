@@ -23,10 +23,12 @@ class AddContactVC: UIViewController {
             if let contactName = contactNameText.text,let contactNumber = contactNumberText.text {
                 
                 addContact(contactName: contactName, contactNumber: contactNumber)
-                navigationController?.popViewController(animated: true)
+                
             }
             
         }
+        
+        navigationController?.popViewController(animated: true)
         
         
         

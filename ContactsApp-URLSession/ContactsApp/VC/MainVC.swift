@@ -12,6 +12,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var contactsArray = [Contacts]()
+    var chosenContact:Contacts?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +74,7 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenContact = contactsArray[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: indexPath.row)
     }
     
@@ -80,11 +82,16 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
         
         if segue.identifier == "toDetailsVC" {
             
+            let destionationVC = segue.destination as! ContactDetailsVC
+            destionationVC.chosenContact = chosenContact
+            
             
         }
         
         if segue.identifier == "toUpdateVC" {
             
+            let destionationVC = segue.destination as! UpdateContactVC
+            destionationVC.chosenContact = chosenContact
             
         }
         

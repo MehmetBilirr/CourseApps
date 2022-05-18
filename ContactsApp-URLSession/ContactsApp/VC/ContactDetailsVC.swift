@@ -11,10 +11,12 @@ class ContactDetailsVC: UIViewController {
 
     @IBOutlet weak var contactNumberLabel: UILabel!
     @IBOutlet weak var contactNameLabel: UILabel!
+    var chosenContact : Contacts?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        contactNameLabel.text = chosenContact?.kisi_ad
+        contactNumberLabel.text = chosenContact?.kisi_tel
     }
     
 
