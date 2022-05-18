@@ -14,17 +14,7 @@ class MoviesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let c1 = Categories(category_id: 1, category_name: "Dram")
-        let c2 = Categories(category_id: 2, category_name: "Action")
         
-        let d1 = Directors(director_id: 1, director_name: "adsad")
-        let d2 = Directors(director_id: 2, director_name: "adfadsad")
-        
-        let m1 = Movies(movie_id: 1, movie_name: "Django", movie_year: 2012, movie_image: "django", category: c1, director: d1)
-        let m2 = Movies(movie_id: 2, movie_name: "Inception", movie_year: 2012, movie_image: "inception", category: c2, director: d2)
-        
-        movieArray.append(m1)
-        movieArray.append(m2)
         
         
         collectionView.delegate = self
@@ -52,7 +42,7 @@ class MoviesVC: UIViewController {
 
 extension MoviesVC:UICollectionViewDelegate,UICollectionViewDataSource,MoviesProtocol {
     func add(indexpath: IndexPath) {
-        print("ADD button clicked : \(movieArray[indexpath.row].movie_name!)")
+        print("ADD button clicked : \(movieArray[indexpath.row].film_ad)")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,9 +54,9 @@ extension MoviesVC:UICollectionViewDelegate,UICollectionViewDataSource,MoviesPro
         let movie = movieArray[indexPath.row]
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! MoviesCVC
-        cell.movieLabel.text = movie.movie_name
+        cell.movieLabel.text = movie.film_ad
         cell.moviePriceLabeö.text = "14.99TL"
-        cell.imageViewMovie.image = UIImage(named: movie.movie_image!)
+        cell.imageViewMovie.image = UIImage(named: movie.film_resim!)
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 0.5
         cell.movieProtocol = self

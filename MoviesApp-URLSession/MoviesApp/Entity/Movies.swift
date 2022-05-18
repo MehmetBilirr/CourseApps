@@ -7,24 +7,25 @@
 
 import Foundation
 
-class Movies {
+class Movies:Codable {
     
-    var movie_id : Int?
-    var movie_name : String?
-    var movie_year : Int?
-    var movie_image : String?
-    var category : Categories?
-    var director : Directors?
+    var film_id : String?
+    var film_ad : String?
+    var film_yil : String?
+    var film_resim : String?
+    var kategori : Categories?
+    var yonetmen : Directors?
     
     
-    init(movie_id:Int,movie_name:String,movie_year:Int,movie_image:String,category:Categories,director:Directors){
+    init(film_id:String,film_ad:String,film_yil:String,film_resim:String,kategori:Categories,yonetmen:Directors){
         
-        self.movie_id = movie_id
-        self.movie_name = movie_name
-        self.movie_year = movie_year
-        self.movie_image = movie_image
-        self.category = category
-        self.director = director
+        self.film_ad = film_ad
+        self.film_id = film_id
+        self.film_resim = film_resim
+        self.film_yil = film_yil
+        self.kategori = kategori
+        self.yonetmen = yonetmen
+        
         
     }
 }

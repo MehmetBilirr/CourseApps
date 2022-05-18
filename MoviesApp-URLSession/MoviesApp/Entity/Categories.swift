@@ -8,15 +8,15 @@
 import Foundation
 
 
-class Categories {
+class Categories:Codable {
     
-    var category_id : Int?
-    var category_name : String?
+    var kategori_id : String?
+    var kategori_ad : String?
     
     
-    init(category_id:Int,category_name:String){
-        self.category_id = category_id
-        self.category_name = category_name
+    init(kategori_id:String,kategori_ad:String){
+        self.kategori_id = kategori_id
+        self.kategori_ad = kategori_ad
         
     }
 }

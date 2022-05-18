@@ -7,15 +7,15 @@
 
 import Foundation
 
-class Directors {
+class Directors:Codable {
     
-    var director_id : Int?
-    var director_name : String?
+    var yonetmen_id : String?
+    var yonetmen_ad : String?
     
     
-    init(director_id:Int,director_name:String){
-        self.director_id = director_id
-        self.director_name = director_name
+    init(yonetmen_id:String,yonetmen_ad:String){
+        self.yonetmen_ad = yonetmen_ad
+        self.yonetmen_id = yonetmen_id
         
     }
 }

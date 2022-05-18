@@ -15,14 +15,42 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         
         
-        let c1 = Categories(category_id: 1, category_name: "Dram")
-        let c2 = Categories(category_id: 2, category_name: "Action")
-        categoryArray.append(c1)
-        categoryArray.append(c2)
+        
         
         tableView.dataSource = self
         tableView.delegate = self
+        getCategories()
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getCategories()
+    }
+    
+    func getCategories(){
+        let url = URL(string: "http://kasimadalan.pe.hu/filmler/tum_kategoriler.php")!
+        
+        URLSession.shared.dataTask(with: url) { data , response , error in
+            if error != nil || data == nil {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            do{
+                let response = try JSONDecoder().decode(CategoryResponse.self, from: data!)
+                if let list = response.kategoriler {
+                    self.categoryArray = list
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            }catch{
+                print(error.localizedDescription)
+            }
+        }.resume()
         
     }
 
@@ -37,7 +65,7 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let category = categoryArray[indexPath.row]
         let cell = UITableViewCell()
-        cell.textLabel?.text = category.category_name
+        cell.textLabel?.text = category.kategori_ad
         return cell
     }
     
