@@ -13,6 +13,8 @@ class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var contactsArray = [Contacts]()
     var chosenContact:Contacts?
+    var isSearching = false
+    var searchingText : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +28,13 @@ class MainVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getContacts()
+        if  isSearching  {
+            
+            searchContact(searchName: searchingText!)
+        }else {
+            getContacts()
+        }
+        
     }
     
     func getContacts(){
@@ -69,14 +77,45 @@ class MainVC: UIViewController {
             do{
                 try JSONSerialization.jsonObject(with: data!)
                 
-                self.getContacts()
+                if self.isSearching {
+                    self.searchContact(searchName: self.searchingText!)
+                }else {
+                    self.getContacts()
+                }
+                
+                
             }catch{
                 print(error.localizedDescription)
             }
         }.resume()
     }
     
-    func 
+    func searchContact(searchName:String){
+        
+        var request = URLRequest(url: URL(string: "http://kasimadalan.pe.hu/kisiler/tum_kisiler_arama.php")!)
+        
+        request.httpMethod = "POST"
+        let postString = "kisi_ad=\(searchName)"
+        request.httpBody = postString.data(using: .utf8)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if error != nil || data == nil {
+                print(error?.localizedDescription)
+            }
+            do{
+                let answer = try JSONDecoder().decode(ContactsResponse.self, from: data!)
+                if let list = answer.kisiler {
+                    self.contactsArray = list
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }catch{
+                print(error.localizedDescription)
+            }
+        }.resume()
+        
+    }
 
     
     
@@ -147,7 +186,13 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
 extension MainVC:UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("search : \(searchText)")
+        searchingText = searchText
+        if searchText == "" {
+            isSearching = false
+        }else {
+            isSearching = true
+        }
+        searchContact(searchName: searchingText!)
     }
     
     
