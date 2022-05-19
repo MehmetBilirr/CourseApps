@@ -88,9 +88,17 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenGrade = gradesArray[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.chosenGrade = chosenGrade
+        }
+    }
     
     
 }
