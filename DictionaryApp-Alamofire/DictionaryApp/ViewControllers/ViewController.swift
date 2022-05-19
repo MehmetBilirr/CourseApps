@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -25,6 +26,57 @@ class ViewController: UIViewController {
         
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getWords()
+    }
+    
+    func getWords(){
+        
+        Alamofire.request("http://kasimadalan.pe.hu/sozluk/tum_kelimeler.php",method: .get).responseJSON { response in
+            
+            if let data = response.data {
+                
+                do {
+                    let cevap = try JSONDecoder().decode(DictionaryResponse.self, from: data)
+                    if let liste = cevap.kelimeler{
+                        
+                        self.wordsArray = liste
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func searchWord(word:String){
+        let parameter:Parameters = ["ingilizce":word]
+        
+        Alamofire.request("http://kasimadalan.pe.hu/sozluk/kelime_ara.php",method: .post,parameters: parameter).responseJSON { response in
+            
+            if let data = response.data {
+                
+                do {
+                    let answer = try JSONDecoder().decode(DictionaryResponse.self, from: data)
+                    if let list = answer.kelimeler{
+                        self.wordsArray = list
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 
 
@@ -62,6 +114,6 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
 
 extension ViewController:UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Arama Sonucu : \(searchText)")
+        searchWord(word: searchText)
     }
 }
