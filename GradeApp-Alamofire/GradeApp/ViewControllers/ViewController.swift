@@ -39,6 +39,25 @@ class ViewController: UIViewController {
                         self.gradesArray = list
                     }
                     DispatchQueue.main.async {
+                        
+                        var sum = 0
+                        
+                        for i in self.gradesArray {
+                            
+                            if let n1 = Int(i.not1!),let n2 = Int(i.not2!){
+                                sum = sum + (n1 + n2)/2
+                                
+                            }
+                            
+                            
+                        }
+                        
+                        if self.gradesArray.count != 0 {
+                            self.navigationItem.prompt = "Average : \(sum/self.gradesArray.count)"
+                        }else {
+                            self.navigationItem.prompt = "No Average "
+                        }
+                        
                         self.tableView.reloadData()
                     }
                     
