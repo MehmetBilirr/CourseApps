@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,33 @@ class ViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getGrades()
+    }
+    
+    func getGrades(){
+        
+        
+        Alamofire.request("http://kasimadalan.pe.hu/notlar/tum_notlar.php",method: .get).responseJSON { response in
+            
+            if let data = response.data {
+                
+                do {
+                    let answer = try JSONDecoder().decode(GradesResponse.self, from: data)
+                    if let list = answer.notlar{
+                        self.gradesArray = list
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 
 
