@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var categoryArray = [Categories]()
+    var chosenCategory:Categories?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +23,34 @@ class MainVC: UIViewController {
         tableView.delegate = self
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getCategories()
+    }
+    
+    func getCategories(){
+        
+        
+        Alamofire.request("http://kasimadalan.pe.hu/filmler/tum_kategoriler.php",method: .get).responseJSON { response in
+            
+            if let data = response.data {
+                
+                do {
+                    let answer = try JSONDecoder().decode(CategoryResponse.self, from: data)
+                    if let list = answer.kategoriler{
+                        
+                        self.categoryArray = list
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 
 
@@ -39,7 +69,15 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenCategory = categoryArray[indexPath.row]
         performSegue(withIdentifier: "toMoviesVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMoviesVC" {
+            let destinationVC = segue.destination as! MoviesVC
+            destinationVC.chosenCategory = chosenCategory
+        }
     }
     
     

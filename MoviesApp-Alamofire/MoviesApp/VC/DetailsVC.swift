@@ -14,10 +14,17 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var movieYear: UILabel!
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
+    var chosenMovie : Movies?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let movie = chosenMovie {
+            movieName.text = movie.film_ad
+            movieCategory.text = movie.kategori?.kategori_ad
+            movieYear.text = movie.film_yil
+            movieDirector.text = movie.yonetmen?.yonetmen_ad
+            movieImageView.image =  UIImage(named: (chosenMovie?.film_resim)!)
+        }
     }
     
 

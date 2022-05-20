@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class MoviesVC: UIViewController {
 
     var movieArray = [Movies]()
+    var chosenCategory : Categories?
+    var chosenMovie : Movies?
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,36 @@ class MoviesVC: UIViewController {
         design.minimumLineSpacing = 10
         collectionView.collectionViewLayout = design
         
+        if let category = chosenCategory {
+            getMoviesByCategory(categoryID: category.kategori_id!)
+        }
+        
+    }
+    
+    func getMoviesByCategory(categoryID:String){
+        let parameter:Parameters = ["kategori_id":categoryID]
+        
+        Alamofire.request("http://kasimadalan.pe.hu/filmler/filmler_by_kategori_id.php",method: .post,parameters: parameter).responseJSON { response in
+            
+            if let data = response.data {
+                
+                do {
+                    let answer = try JSONDecoder().decode(MoviesResponse.self, from: data)
+                    if let list = answer.filmler{
+                                           
+                        self.movieArray = list
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                    
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
     
     
@@ -65,8 +98,15 @@ extension MoviesVC:UICollectionViewDelegate,UICollectionViewDataSource,MoviesPro
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        chosenMovie = movieArray[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.chosenMovie = chosenMovie
+        }
+    }
     
 }
