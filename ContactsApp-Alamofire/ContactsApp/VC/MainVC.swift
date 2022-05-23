@@ -52,6 +52,29 @@ class MainVC: UIViewController {
             }
         }
     }
+    
+    func deleteContact(contactID:String){
+        let parameter:Parameters = ["kisi_id":contactID]
+        
+        Alamofire.request("http://kasimadalan.pe.hu/kisiler/delete_kisiler.php",method: .post,parameters: parameter).responseJSON { response in
+            
+            if let data = response.data {
+                
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data) as? [String:Any]{
+                        print(json)
+                    }
+                    DispatchQueue.main.async {
+                        self.getContacts()
+                    }
+                    
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
 
 
 }
@@ -100,11 +123,15 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contexualAction, view, boolValue in
-            print("Delete  clicked \(self.contactArray[indexPath.row])")
+            
+            let contact = self.contactArray[indexPath.row]
+            self.deleteContact(contactID: contact.kisi_id)
+
+            
         }
         
         let updateAction = UIContextualAction(style: .normal, title: "Update") { contexualAction, view, boolValue in
-            
+            self.chosenContact = self.contactArray[indexPath.row]
             self.performSegue(withIdentifier: "toUpdateVC", sender: indexPath.row)
         }
         
