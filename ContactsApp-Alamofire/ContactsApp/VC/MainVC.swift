@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainVC: UIViewController {
 
@@ -20,6 +21,35 @@ class MainVC: UIViewController {
         tableView.dataSource = self
         
         searchBar.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getContacts()
+    }
+    
+    
+    func getContacts(){
+        
+        
+        Alamofire.request("http://kasimadalan.pe.hu/kisiler/tum_kisiler.php",method: .get).responseJSON { response in
+            
+            if let data = response.data {
+                
+                do {
+                    let answer = try JSONDecoder().decode(ContactsResponse.self, from: data)
+                    if let list = answer.kisiler{
+                        self.contactArray = list
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 
 
