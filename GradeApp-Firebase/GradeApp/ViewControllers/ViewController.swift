@@ -22,13 +22,41 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        getGrades()
+    }
     
     
     func getGrades(){
         
         let firestoreData = Firestore.firestore()
         firestoreData.collection("grades").addSnapshotListener { snapshot, error in
-            if error 
+            if error != nil {
+                print(error?.localizedDescription)
+            }else {
+                if snapshot?.isEmpty != true && snapshot != nil {
+                    
+                    self.gradesArray.removeAll(keepingCapacity: true)
+                    for document in snapshot!.documents {
+                        
+                        if let id = document.documentID as? String{
+                            if let lesson = document.get("lessonName") as? String{
+                                if let grade1 = document.get("grade1") as? String{
+                                    if let grade2 = document.get("grade2") as? String {
+                                        let grade = Grades(not_id: id, ders_adi: lesson, not1: grade1, not2: grade2)
+                                        self.gradesArray.append(grade)
+                                    }
+                                }
+                            }
+                        }
+                        
+                        
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
         }
     }
 
