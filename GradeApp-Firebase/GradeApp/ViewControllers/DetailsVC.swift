@@ -27,6 +27,9 @@ class DetailsVC: UIViewController {
     
     @IBAction func updateClicked(_ sender: Any) {
         
+        if let grade = chosenGrade,let name = lessonText.text,let grade1 = grade1Text.text,let grade2 = grade2Text.text {
+            updateGrade(gradeID: grade.not_id!, lessonName: name, grade1: grade1, grade2: grade2)
+        }
         
     }
     
@@ -50,7 +53,18 @@ class DetailsVC: UIViewController {
         }
     }
     
-    func updateGrade
+    func updateGrade(gradeID:String,lessonName:String,grade1:String,grade2:String){
+        
+        let document : [String:Any] = ["lessonName":lessonName,"grade1":grade1,"grade2":grade2]
+        firestoreDB.collection("grades").document(gradeID).setData(document) { error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }else {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        
+    }
     
 
 }
