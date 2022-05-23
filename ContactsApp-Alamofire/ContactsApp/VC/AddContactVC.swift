@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AddContactVC: UIViewController {
 
@@ -18,16 +19,34 @@ class AddContactVC: UIViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
+        if let contactName = contactNameText.text,let contactNumber = contactNumberText.text {
+            kisiEkle(contactName: contactName, contactNumber: contactNumber)
+        }
+        
+        
+        navigationController?.popViewController(animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func kisiEkle(contactName:String,contactNumber:String){
+        let parameter:Parameters = ["kisi_ad":contactName,"kisi_tel":contactNumber]
+        
+        Alamofire.request("http://kasimadalan.pe.hu/kisiler/insert_kisiler.php",method: .post,parameters: parameter).responseJSON { response in
+            
+            if let data = response.data {
+                
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data) as? [String:Any]{
+                        print(json)
+                    }
+                    
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
-    */
+    
+    
 
 }
