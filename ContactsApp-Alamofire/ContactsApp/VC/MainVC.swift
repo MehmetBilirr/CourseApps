@@ -14,6 +14,8 @@ class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var contactArray = [Contacts]()
     var chosenContact : Contacts?
+    var isSearching = false
+    var searchingText = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +26,12 @@ class MainVC: UIViewController {
         searchBar.delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
-        getContacts()
+        if isSearching {
+            
+            searchContact(contactName: searchingText)
+        }else{
+            getContacts()
+        }
     }
     
     
@@ -65,7 +72,12 @@ class MainVC: UIViewController {
                         print(json)
                     }
                     DispatchQueue.main.async {
-                        self.getContacts()
+                        if self.isSearching {
+                            
+                            self.searchContact(contactName: self.searchingText)
+                        }else{
+                            self.getContacts()
+                        }
                     }
                     
                     
@@ -142,7 +154,42 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
 extension MainVC:UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("search : \(searchText)")
+        
+        searchingText = searchText
+        if searchText == "" {
+            isSearching = false
+        }else {
+            isSearching = true
+        }
+        searchContact(contactName: searchingText)
+        
+        
+        
+    }
+    
+    func searchContact(contactName:String){
+        let parametreler:Parameters = ["kisi_ad":contactName]
+        
+        Alamofire.request("http://kasimadalan.pe.hu/kisiler/tum_kisiler_arama.php",method: .post,parameters: parametreler).responseJSON { response in
+            
+            if let data = response.data {
+                
+                do {
+                    let answer = try JSONDecoder().decode(ContactsResponse.self, from: data)
+                    if let list = answer.kisiler{
+                        self.contactArray = list
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
     
     
