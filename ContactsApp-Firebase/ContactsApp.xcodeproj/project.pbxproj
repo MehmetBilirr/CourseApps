@@ -11,6 +11,7 @@
 		8D16AFACD90210FBD54485AC /* Pods_ContactsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BD0E54ABC4D06B7A9709CB /* Pods_ContactsAppTests.framework */; };
 		F0969D9A283BB82C001EAC77 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0969D98283BB82C001EAC77 /* Contacts.swift */; };
 		F0969D9B283BB82C001EAC77 /* ContactsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0969D99283BB82C001EAC77 /* ContactsResponse.swift */; };
+		F097861C283D7A86004CBB95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F097861B283D7A86004CBB95 /* GoogleService-Info.plist */; };
 		F0C90169282D8FD9002CA3B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C90168282D8FD9002CA3B5 /* AppDelegate.swift */; };
 		F0C9016B282D8FD9002CA3B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9016A282D8FD9002CA3B5 /* SceneDelegate.swift */; };
 		F0C9016D282D8FD9002CA3B5 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9016C282D8FD9002CA3B5 /* MainVC.swift */; };
@@ -55,6 +56,7 @@
 		D78CFD76B1E59BD9F2E14938 /* Pods-ContactsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ContactsAppTests/Pods-ContactsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0969D98283BB82C001EAC77 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		F0969D99283BB82C001EAC77 /* ContactsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsResponse.swift; sourceTree = "<group>"; };
+		F097861B283D7A86004CBB95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F0C90165282D8FD9002CA3B5 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C90168282D8FD9002CA3B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C9016A282D8FD9002CA3B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +125,6 @@
 				D78CFD76B1E59BD9F2E14938 /* Pods-ContactsAppTests.debug.xcconfig */,
 				4BB47E3E65BBD5C1FA2834A7 /* Pods-ContactsAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -167,6 +168,7 @@
 				F0C90173282D8FDA002CA3B5 /* LaunchScreen.storyboard */,
 				F0C90198282D8FF8002CA3B5 /* Main.storyboard */,
 				F0C90176282D8FDA002CA3B5 /* Info.plist */,
+				F097861B283D7A86004CBB95 /* GoogleService-Info.plist */,
 				F0C9017E282D8FDA002CA3B5 /* ContactsAppTests */,
 			);
 			path = ContactsApp;
@@ -320,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0C90199282D8FF8002CA3B5 /* Main.storyboard in Resources */,
+				F097861C283D7A86004CBB95 /* GoogleService-Info.plist in Resources */,
 				F0C90175282D8FDA002CA3B5 /* LaunchScreen.storyboard in Resources */,
 				F0C90172282D8FDA002CA3B5 /* Assets.xcassets in Resources */,
 			);

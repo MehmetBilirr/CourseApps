@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Firebase
 
 class AddContactVC: UIViewController {
 
     @IBOutlet weak var contactNumberText: UITextField!
     @IBOutlet weak var contactNameText: UITextField!
+    var firestoreDB = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,16 +20,26 @@ class AddContactVC: UIViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
+        
+        if let name = contactNameText.text, let number = contactNumberText.text {
+            addContact(contactName: name, ContactNumber: number)
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func addContact(contactName:String,ContactNumber:String){
+        
+        
+        let data = ["contact_name":contactName,"contact_number":ContactNumber]
+        
+        firestoreDB.collection("contacts").addDocument(data: data) { error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }else {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+ 
     }
-    */
-
+    
+    
 }
