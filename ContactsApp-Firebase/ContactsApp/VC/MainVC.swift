@@ -13,7 +13,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var contactArray = [Contacts]()
     var firestoreDB = Firestore.firestore()
-    var chose
+    var chosenContact : Contacts?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,6 +78,7 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenContact = contactArray[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: indexPath.row)
     }
     
@@ -85,11 +86,16 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
         
         if segue.identifier == "toDetailsVC" {
             
+            let destinationVC = segue.destination as! ContactDetailsVC
+            destinationVC.chosenContact = chosenContact
+            
             
         }
         
         if segue.identifier == "toUpdateVC" {
             
+            let destinationVC = segue.destination as! UpdateContactVC
+            destinationVC.chosenContact = chosenContact
             
         }
         
@@ -99,12 +105,12 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contexualAction, view, boolValue in
-            print("Delete  clicked \(self.contactArray[indexPath.row])")
+            let contact = self.contactArray[indexPath.row]
         }
         
         let updateAction = UIContextualAction(style: .normal, title: "Update") { contexualAction, view, boolValue in
-            print("Update Clicked \(self.contactArray[indexPath.row])")
-            self.performSegue(withIdentifier: "toDetailsVC", sender: indexPath.row)
+            self.chosenContact = self.contactArray[indexPath.row]
+            self.performSegue(withIdentifier: "toUpdateVC", sender: indexPath.row)
         }
         
         return UISwipeActionsConfiguration(actions: [deleteAction,updateAction])

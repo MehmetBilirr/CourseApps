@@ -11,6 +11,7 @@ class UpdateContactVC: UIViewController {
 
     @IBOutlet weak var contactNumberText: UITextField!
     @IBOutlet weak var contactNameText: UITextField!
+    var chosenContact : Contacts?
     override func viewDidLoad() {
         super.viewDidLoad()
 
