@@ -106,6 +106,7 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contexualAction, view, boolValue in
             let contact = self.contactArray[indexPath.row]
+            self.deleteContact(contactID: contact.kisi_id)
         }
         
         let updateAction = UIContextualAction(style: .normal, title: "Update") { contexualAction, view, boolValue in
@@ -114,6 +115,18 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
         }
         
         return UISwipeActionsConfiguration(actions: [deleteAction,updateAction])
+    }
+    func deleteContact (contactID:String){
+        
+        
+        firestoreDB.collection("contacts").document(contactID).delete { error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }else {
+                self.getContacts()
+                self.tableView.reloadData()
+            }
+        }
     }
     
     }
