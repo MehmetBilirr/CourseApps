@@ -13,11 +13,11 @@ class Movies:Codable {
     var film_ad : String?
     var film_yil : String?
     var film_resim : String?
-    var kategori : Categories?
-    var yonetmen : Directors?
+    var kategori : String?
+    var yonetmen : String?
     
     
-    init(film_id:String,film_ad:String,film_yil:String,film_resim:String,kategori:Categories,yonetmen:Directors){
+    init(film_id:String,film_ad:String,film_yil:String,film_resim:String,kategori:String,yonetmen:String){
         
         self.film_ad = film_ad
         self.film_id = film_id

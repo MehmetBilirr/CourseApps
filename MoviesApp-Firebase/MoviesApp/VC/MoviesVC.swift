@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class MoviesVC: UIViewController {
 
     var movieArray = [Movies]()
     @IBOutlet weak var collectionView: UICollectionView!
+    var chosenCategory : Categories?
+    var firestoreDB = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +33,45 @@ class MoviesVC: UIViewController {
         design.minimumInteritemSpacing = 10
         design.minimumLineSpacing = 10
         collectionView.collectionViewLayout = design
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if let category = chosenCategory {
+            getMoviesByCategory(categoryName: category.kategori_ad!)
+        }
+    }
+    
+    func getMoviesByCategory(categoryName:String) {
+        
+        firestoreDB.collection("Movies").whereField("category_name", isEqualTo: categoryName).getDocuments { snapshot, error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }else {
+              if  snapshot?.isEmpty == false && snapshot != nil{
+                    
+                    self.movieArray.removeAll(keepingCapacity: true)
+                    for document in snapshot!.documents {
+                        
+                        if let id = document.documentID as? String{
+                            if let name = document.get("movie_name") as? String{
+                                if let year = document.get("movie_year") as? String{
+                                    if let director = document.get("director_name") as? String{
+                                        if let category = document.get("category_name") as? String {
+                                            if let image = document.get("movie_image") as? String {
+                                                let movie = Movies(film_id: id, film_ad: name, film_yil: year, film_resim: image, kategori: category, yonetmen: director)
+                                                self.movieArray.append(movie)
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                  self.collectionView.reloadData()
+                }
+            }
+        }
         
     }
     
