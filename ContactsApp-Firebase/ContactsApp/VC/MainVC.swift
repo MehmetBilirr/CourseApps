@@ -6,12 +6,14 @@
 //
 
 import UIKit
-
+import Firebase
 class MainVC: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var contactArray = [Contacts]()
+    var firestoreDB = Firestore.firestore()
+    var chose
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +22,39 @@ class MainVC: UIViewController {
         tableView.dataSource = self
         
         searchBar.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getContacts()
+    }
+    
+    
+    func getContacts(){
+        
+        firestoreDB.collection("contacts").getDocuments { snapshot, error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }else {
+                if snapshot?.isEmpty == false && snapshot != nil {
+                    
+                    self.contactArray.removeAll(keepingCapacity: true)
+                    for document in snapshot!.documents {
+                        
+                        if let id = document.documentID as? String {
+                            if let name = document.get("contact_name") as? String {
+                                if let number = document.get("contact_number") as? String {
+                                    let contact = Contacts(kisi_ad: name, kisi_tel: number, kisi_id: id)
+                                    self.contactArray.append(contact)
+                                }
+                            }
+                        }
+                        
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+        
     }
 
 
